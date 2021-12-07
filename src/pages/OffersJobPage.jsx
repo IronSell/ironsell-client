@@ -1,4 +1,3 @@
-
 import "../App.css";
 import Searchbar from "../components/Searchbar/Searchbar"
 import CarOffers from '../components/CardOffers/CardOffers';
@@ -6,15 +5,16 @@ import CarOffers from '../components/CardOffers/CardOffers';
 
 
 
-function HomePage() {
+function OfeersJobPage() {
 
   return (
+      
     <div className="App">
-      <h1>feersJobPage</h1>
+        <h1>feersJobPage</h1>
      <Searchbar/>
      <CarOffers/>
     </div>
   );
 }
 
-export default HomePage;
+export default OfeersJobPage;
