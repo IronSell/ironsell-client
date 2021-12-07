@@ -7,8 +7,9 @@ import * as CONSTS from "../../utils/consts";
 const Navbar = (props) => {
   return (
     <nav>
+      
       <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-        {CONSTS.CAPITALIZED_APP} - created with IronLauncher
+         Home
       </Link>
 
       <div className="nav__authLinks">
