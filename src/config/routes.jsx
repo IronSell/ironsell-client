@@ -4,13 +4,17 @@ import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
-
+import OffersJobPage from "../pages/OffersJobPage";
 const routes = (props) => {
   const { user } = props;
   return [
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
+    },
+    {
+      path: PATHS.OFFERSJOBPAGE,
+      element: <OffersJobPage {...props} />,
     },
     {
       path: PATHS.SIGNUPPAGE,

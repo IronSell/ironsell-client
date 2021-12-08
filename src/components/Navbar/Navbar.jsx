@@ -7,9 +7,12 @@ import * as CONSTS from "../../utils/consts";
 const Navbar = (props) => {
   return (
     <nav>
-      
+
       <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-         Home
+        IronJob
+      </Link>
+      <Link to={PATHS.OFFERSJOBPAGE}>
+        Offers
       </Link>
 
       <div className="nav__authLinks">

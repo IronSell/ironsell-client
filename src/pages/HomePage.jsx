@@ -10,7 +10,7 @@ function HomePage() {
 
   return (
     <div className="App">
-      <h1>OffersJobPage</h1>
+      <h1>Home Page</h1>
      <Searchbar/>
      <CardOffers/>
     </div>
