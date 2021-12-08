@@ -9,7 +9,7 @@ function OffersJobPage() {
 
   useEffect(() => {
     axios.get('http://localhost:5005/api/offers').then((response) => {
-      console.log(response.data.searchOffers)
+      console.log(response.data.searchOffers);
       setJobOffers(response.data.searchOffers);
     });
   }, []);
@@ -18,11 +18,9 @@ function OffersJobPage() {
     <div className='App'>
       <h1>OffersJobPage</h1>
       <Searchbar />
-     
       <h2>List of Job Offers</h2>
       {jobOffers.map((searchOffers) => (
-    
-         <Test searchOffers={searchOffers} />
+        <Test searchOffers={searchOffers} />
       ))}
     </div>
   );
