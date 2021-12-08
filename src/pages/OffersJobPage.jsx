@@ -9,7 +9,7 @@ function OffersJobPage() {
 
   useEffect(() => {
     axios.get('http://localhost:5005/api/offers').then((response) => {
-      console.log(response.data.searchOffers);
+      console.log(response.data.searchOffers)
       setJobOffers(response.data.searchOffers);
     });
   }, []);
@@ -18,14 +18,11 @@ function OffersJobPage() {
     <div className='ContainerOfferJobPage'>
       <h1>OffersJobPage</h1>
       <Searchbar />
-<<<<<<< HEAD
      <div className='OffersStylesDiv'>
-      
-=======
       <h2>List of Job Offers</h2>
->>>>>>> 08922035422b7d702de0a10b1db93ce0d53afbe4
       {jobOffers.map((searchOffers) => (
-        <Test searchOffers={searchOffers} />
+    
+         <Test searchOffers={searchOffers} />
       ))}
       </div>
     </div>
