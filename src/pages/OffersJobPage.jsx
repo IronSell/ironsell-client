@@ -18,16 +18,10 @@ function OffersJobPage() {
     <div className='ContainerOfferJobPage'>
       <h1>OffersJobPage</h1>
       <Searchbar />
-<<<<<<< HEAD
-     <div className='OffersStylesDiv'>
-      
-=======
       <h2>List of Job Offers</h2>
->>>>>>> 08922035422b7d702de0a10b1db93ce0d53afbe4
       {jobOffers.map((searchOffers) => (
         <Test searchOffers={searchOffers} />
       ))}
-      </div>
     </div>
   );
 }
