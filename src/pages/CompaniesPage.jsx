@@ -20,8 +20,8 @@ const CompaniesPage = ()=>{
             <h1>Companies</h1>
             <Searchbar />
             <h2>List of Companies</h2>
-            {companiesList.map((searchCompany) => (
-            <CardCompanies searchCompany={searchCompany} />
+            {companiesList.map((searchCompany, index)  => (
+            <CardCompanies searchCompany={searchCompany} key={index + Date.now()} />
       ))}  
         </div>
     )

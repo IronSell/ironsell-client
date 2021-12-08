@@ -4,7 +4,7 @@ import Searchbar from "../components/Searchbar/Searchbar"
 // import CardCompanies from "../components/CardCompanies/CardCompanies";
 // import CardCompany from "../components/CardCompany"
 
-import CardOffers from '../components/CardOffers/CardOffers';
+import Test from '../components/CardOffers/Test';
 // import CardCompanies from "../components/CardCompanies/CardCompanies";
 
 
@@ -14,7 +14,7 @@ function HomePage() {
     <div className="App">
       <h1>Home Page</h1>
      <Searchbar/>
-     <CardOffers/>
+     <Test/>
      {/* <CardCompanies /> */}
     </div>
   );
