@@ -47,7 +47,7 @@ export function getLoggedIn() {
 
 export function signup(credentials) {
   return authService
-    .post("/signup", credentials)
+    .post("/signup/user", credentials)
     .then(successStatus)
     .catch(internalServerError);
 }
