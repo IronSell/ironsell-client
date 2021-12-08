@@ -1,20 +1,20 @@
 import "../App.css";
 import Searchbar from "../components/Searchbar/Searchbar"
-import CarOffers from '../components/CardOffers/CardOffers';
+import CardOffers from '../components/CardOffers/CardOffers';
 
 
 
 
-function OfeersJobPage() {
+function OffersJobPage() {
 
   return (
       
     <div className="App">
-        <h1>feersJobPage</h1>
+        <h1>OffersJobPage</h1>
      <Searchbar/>
-     <CarOffers/>
+     <CardOffers/>
     </div>
   );
 }
 
-export default OfeersJobPage;
+export default OffersJobPage;

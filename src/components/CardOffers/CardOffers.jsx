@@ -4,7 +4,7 @@ import { Card } from 'antd';
 
 
 
-function CarOffers() {
+function CardOffers() {
 const { Meta } = Card;
   return (
     <div className="App">  
@@ -19,5 +19,5 @@ const { Meta } = Card;
   );
 }
 
-export default CarOffers;
+export default CardOffers;
 
