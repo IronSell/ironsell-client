@@ -1,23 +1,21 @@
-import { Card, Avatar } from 'antd';
-const { Meta } = Card;
+// import { Card, Button } from 'antd';
 
-const CardCompany = () => {
-    return (
-      
-        <Card style={{ width: 300, marginTop: 16 }} >
+// function CardCompany(props) {
+//     const { name, companyUrl, companyLogo, companyDescription } = props.searchCompany
+//     const { Meta } = Card;
+//     return (
+//         <div className="App">
+//             <Card
+//                 hoverable
+//                 style={{ width: 240 }}
+//                 cover={<img alt="example" src={companyLogo} />}
+//             >
+//                 <p>{companyUrl}</p>
+//                 <Meta title={name} description={companyDescription} />
+//                 <Button type="primary" > Offers </Button>
+//             </Card>
+//         </div>
+//     );
+// }
 
-          <Meta
-            avatar={<Avatar src="https://www.aial.es/wp-content/uploads/2018/11/Logo-Ironhack.jpg" />}
-            title="IronHack"
-            description="Cursos intensivos en Desarrollo Web, Diseño UX UI, Análisis de Datos y Ciberseguridad. Formatos diseñados para ti: remoto o presencial, full-time o part-time"
-          />
-          {/* <div>
-            <SettingOutlined key="setting" />,
-            <EditOutlined key="edit" />,
-            <EllipsisOutlined key="ellipsis" />,
-          </div> */}
-        </Card>
-        )
-} 
-
-export default CardCompany
+// export default CardCompany;
