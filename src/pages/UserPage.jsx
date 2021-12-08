@@ -13,7 +13,7 @@ function UserPage() {
     <div className="App">
       <h1>User Page</h1>
      <Searchbar/>
-     <CardOffers/>
+     
      
 
     </div>

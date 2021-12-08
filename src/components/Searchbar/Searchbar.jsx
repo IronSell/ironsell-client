@@ -4,7 +4,7 @@ import "./Searchbar.css";
 const Searchbar = () => {
 
 return (
-    <div className="align-search">
+    <div className="ContainerSearbar">
             <input type="text" className= "search-bar"/>
             <button>search</button>
     </div>

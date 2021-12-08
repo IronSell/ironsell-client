@@ -15,15 +15,16 @@ function OffersJobPage() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className='ContainerOfferJobPage'>
       <h1>OffersJobPage</h1>
       <Searchbar />
-     
-      <h2>List of Job Offers</h2>
+     <div className='OffersStylesDiv'>
+      
       {jobOffers.map((searchOffers) => (
     
          <Test searchOffers={searchOffers} />
       ))}
+      </div>
     </div>
   );
 }
