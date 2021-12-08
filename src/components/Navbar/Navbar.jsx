@@ -14,6 +14,9 @@ const Navbar = (props) => {
       <Link to={PATHS.OFFERSJOBPAGE}>
         Offers
       </Link>
+      <Link to={PATHS.COMPANIESPAGE}>
+        Companies
+      </Link>
 
       <div className="nav__authLinks">
         {props.user ? (

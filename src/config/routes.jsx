@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
 import OffersJobPage from "../pages/OffersJobPage";
+import CompaniesPage from "../pages/CompaniesPage";
 const routes = (props) => {
   const { user } = props;
   return [
@@ -15,6 +16,10 @@ const routes = (props) => {
     {
       path: PATHS.OFFERSJOBPAGE,
       element: <OffersJobPage {...props} />,
+    },
+    {
+      path: PATHS.COMPANIESPAGE,
+      element: <CompaniesPage {...props} />,
     },
     {
       path: PATHS.SIGNUPPAGE,
