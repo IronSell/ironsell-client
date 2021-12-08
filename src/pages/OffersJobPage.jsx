@@ -18,11 +18,9 @@ function OffersJobPage() {
     <div className='App'>
       <h1>OffersJobPage</h1>
       <Searchbar />
-
       <h2>List of Job Offers</h2>
       {jobOffers.map((searchOffers) => (
-
-      <Test searchOffers={searchOffers} />
+        <Test searchOffers={searchOffers} />
       ))}
     </div>
   );
