@@ -2,11 +2,7 @@
 import "../App.css";
 import Searchbar from "../components/Searchbar/Searchbar"
 import CardOffers from '../components/CardOffers/CardOffers';
-import CardCompanies from "../components/CardCompanies/CardCompanies";
-import CardCompany from "../components/CardCompany"
-
-
-
+// import CardCompanies from "../components/CardCompanies/CardCompanies";
 
 
 function HomePage() {
@@ -16,9 +12,7 @@ function HomePage() {
       <h1>Home Page</h1>
      <Searchbar/>
      <CardOffers/>
-     <CardCompanies />
-     <CardCompany />
-
+     {/* <CardCompanies /> */}
     </div>
   );
 }

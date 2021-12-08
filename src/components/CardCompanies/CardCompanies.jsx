@@ -1,18 +1,21 @@
 import { Card } from 'antd';
-const { Meta } = Card;
 
-
-const CardCompanies = (props)=>{
-    return(
-        <div className="CardCompanies">  
-        <Card
-       hoverable
-       style={{ width: 240 }}
-       cover={<img alt="example" src="https://www.aial.es/wp-content/uploads/2018/11/Logo-Ironhack.jpg" />}
-       >
-       <Meta title="IronHack" description="www.ironhack.com" />
-       </Card>
-       </div>
+function CardCompanies(props) {
+    const { searchCompany} = props
+    console.log(searchCompany)
+    const { Meta } = Card;
+    return (
+        <div className="App">
+            <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={<img alt="example" src={searchCompany.companyLogo} />}
+            >
+                <p>{searchCompany.companyUrl}</p>
+                <Meta title={searchCompany.name} description={searchCompany.companyDescription} />
+                {/* <Button type="primary" > Offers </Button> */}
+            </Card>
+        </div>
     );
 }
 
