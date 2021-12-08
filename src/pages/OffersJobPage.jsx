@@ -18,10 +18,10 @@ function OffersJobPage() {
       {/* <h1>OffersJobPage</h1>
       <Searchbar />
       <CardOffers /> */}
-      <h2>List of Job Offers</h2>
+      <h1>List of Job Offers</h1>
       {jobOffers.map((searchOffers) => (
         <div key={searchOffers._id} className='card'>
-          <h3>{searchOffers.jobTitle}</h3>
+          <h2>{searchOffers.jobTitle}</h2>
           <p>Experience: {searchOffers.experienceYears}</p>
           <p>Salary: {searchOffers.salary} €</p>
           <p> Description: {searchOffers.description}</p>
