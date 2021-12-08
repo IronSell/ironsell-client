@@ -2,7 +2,7 @@ import { Card } from 'antd';
 const { Meta } = Card;
 
 
-const CardCompanies = ()=>{
+const CardCompanies = (props)=>{
     return(
         <div className="CardCompanies">  
         <Card
