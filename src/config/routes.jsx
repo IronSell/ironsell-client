@@ -1,11 +1,12 @@
-import { Navigate } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import Login from '../pages/LogIn';
+
+import { Navigate } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import Login from "../pages/LogIn";
+import UserPage from "../pages/UserPage";
+import CompaniesPage from "../pages/CompaniesPage";
 import Signup from '../pages/Signup';
-import UserPage from '../pages/UserPage';
 import * as PATHS from '../utils/paths';
 import OffersJobPage from '../pages/OffersJobPage';
-import CompaniesPage from '../pages/CompaniesPage';
 import CompanyPage from '../pages/CompanyPage';
 
 const routes = (props) => {
