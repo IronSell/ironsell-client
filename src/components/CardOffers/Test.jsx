@@ -2,7 +2,7 @@ import { Card } from 'antd';
 import "./CardOffers.css";
 function Test(props) {
     const { searchOffers } = props
-    console.log(searchOffers)
+    console.log(searchOffers.jobTitle)
     const { Meta } = Card;
     return (
         <div className="App">

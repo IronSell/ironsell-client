@@ -18,13 +18,18 @@ function OffersJobPage() {
     <div className='ContainerOfferJobPage'>
       <h1>OffersJobPage</h1>
       <Searchbar />
+<<<<<<< HEAD
      <div className='OffersStylesDiv'>
       <h2>List of Job Offers</h2>
       {jobOffers.map((searchOffers) => (
     
          <Test searchOffers={searchOffers} />
+=======
+      <h2>List of Job Offers</h2>
+      {jobOffers.map((searchOffers, index) => (
+        <Test searchOffers={searchOffers} key={index + Date.now()} />
+>>>>>>> 2299fa3b15eea6e24137922ec88590e48f1b41cb
       ))}
-      </div>
     </div>
   );
 }
