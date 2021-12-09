@@ -1,24 +1,29 @@
-// import { Card, Avatar } from 'antd';
-// import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-// const { Meta } = Card;
+import '../App.css'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+// import CardCompanyByUser from '../components/CardCompany/CardCompanyByUser'
+// import CardCompanyByCompany from '../components/CardCompany/CardCompanyByCompany'
 
-// const CompanyPage = () => {
+const CompanyPage = () => {
 
-//     return (
-//         <Card style={{ width: 300, marginTop: 16 }} >
-//           <Meta
-//             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-//             title="Card title"
-//             description="This is the description"
-//           />
-//           <div>actions={[
-//             <SettingOutlined key="setting" />,
-//             <EditOutlined key="edit" />,
-//             <EllipsisOutlined key="ellipsis" />,
-//           ]}
-//           </div>
-//         </Card>
-//         )
-// } 
+    const [companyId, setCompanyId] = useState([])
 
-// export default CompanyPage
+    useEffect(() => {
+        axios.get('http://localhost:5005/api/companies/:_id').then((response) => {
+          console.log(response.data.showCompany)
+          setCompanyId(response.data.showCompany)
+        })
+      }, [])
+
+  return (
+    <div className="CompanyPage">
+      <h1>Companiy</h1>
+      <h2>List of Companies</h2>
+      <div>
+          {/* <CardCompanyByUser showCompany={showCompany} /> */}
+      </div>
+    </div>
+  )
+}
+
+export default CompanyPage
