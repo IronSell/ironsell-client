@@ -42,3 +42,4 @@ function CardCompanyByUser(props) {
 }
 
 export default CardCompanyByUser;
+
