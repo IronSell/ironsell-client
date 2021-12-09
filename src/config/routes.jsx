@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
-import ProtectedPage from "../pages/ProtectedPage";
+import UserPage from "../pages/UserPage";
 import * as PATHS from "../utils/paths";
 import OffersJobPage from "../pages/OffersJobPage";
 import CompaniesPage from "../pages/CompaniesPage";
@@ -31,9 +31,9 @@ const routes = (props) => {
       element: <Login {...props} />,
     },
     {
-      path: PATHS.PROTECTEDPAGE,
+      path: PATHS.USERPAGE,
       element: user ? (
-        <ProtectedPage {...props} />
+        <UserPage {...props} />
       ) : (
         <Navigate to={PATHS.LOGINPAGE} replace />
       ),

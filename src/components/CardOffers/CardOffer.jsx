@@ -1,31 +1,26 @@
-import { Card } from 'antd'
+import { List, Avatar } from 'antd'
 import './CardOffers.css'
+
 function CardOffer(props) {
   const { searchOffers } = props
-  console.log(searchOffers.jobTitle)
-  const { Meta } = Card
+  const data = [
+    searchOffers
+  ];
   return (
     <div className="App">
-      <Card
-        className="cards"
-        hoverable
-        style={{ width: 240 }}
-        cover={
-          <img
-            alt="example"
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-          />
-        }
-      >
-        <Meta
-          title={searchOffers.jobTitle}
-          description={searchOffers.province}
-        />
-        <p>{searchOffers.experienceYears}</p>
-        <p>Salary: {searchOffers.salary}</p>
-        <p>{searchOffers.schedule}</p>
-        <p>{searchOffers.updatedAt}</p>
-      </Card>
+      <List
+        itemLayout="horizontal"
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+              title={<a href="https://ant.design">{searchOffers.experienceYears}</a>}
+              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+            />
+          </List.Item>
+        )}
+      />
     </div>
   )
 }

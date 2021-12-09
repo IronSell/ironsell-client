@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import * as USER_HELPERS from '../utils/userToken';
 
-const ProtectedPage = (props) => {
+const UserPage = (props) => {
   const { authenticate, user } = props;
   useEffect(() => {
     axios
@@ -28,4 +28,4 @@ const ProtectedPage = (props) => {
   );
 };
 
-export default ProtectedPage;
+export default UserPage;
