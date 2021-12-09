@@ -1,25 +1,33 @@
-import { Card } from 'antd';
-import "./CardOffers.css";
+import { Card } from 'antd'
+import './CardOffers.css'
 function CardOffer(props) {
-    const { searchOffers } = props
-    console.log(searchOffers.jobTitle)
-    const { Meta } = Card;
-    return (
-        <div className="App">
-            <Card
-                className='cards'
-                hoverable
-                style={{ width: 240 }}
-                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-                <Meta title={searchOffers.jobTitle} description={searchOffers.province} />
-                <p>{searchOffers.experienceYears}</p>
-                <p>Salary: {searchOffers.salary}</p>
-                <p>{searchOffers.schedule}</p>
-                <p>{searchOffers.updatedAt}</p>
-            </Card>
-        </div>
-    );
+  const { searchOffers } = props
+  console.log(searchOffers.jobTitle)
+  const { Meta } = Card
+  return (
+    <div className="App">
+      <Card
+        className="cards"
+        hoverable
+        style={{ width: 240 }}
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }
+      >
+        <Meta
+          title={searchOffers.jobTitle}
+          description={searchOffers.province}
+        />
+        <p>{searchOffers.experienceYears}</p>
+        <p>Salary: {searchOffers.salary}</p>
+        <p>{searchOffers.schedule}</p>
+        <p>{searchOffers.updatedAt}</p>
+      </Card>
+    </div>
+  )
 }
 
-export default CardOffer;
+export default CardOffer
