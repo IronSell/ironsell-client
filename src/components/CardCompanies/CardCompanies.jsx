@@ -1,19 +1,21 @@
-import { Card } from 'antd'
+import { Card, Button } from 'antd'
+
 
 function CardCompanies(props) {
-  const { searchCompany } = props
-  console.log(searchCompany)
+  const { companyLogo, name, province, companyUrl } = props.searchCompany
   const { Meta } = Card
   return (
     <div className="App">
       <Card
         hoverable
         style={{ width: 240 }}
-        cover={<img alt="example" src={searchCompany.companyLogo} />}
+        cover={<img alt="example" src={companyLogo} />}
       >
-        <Meta title={searchCompany.name} description={searchCompany.province} />
+        <Meta title={name} description={province} />
         
-        {/* <Button type="primary" > Offers </Button> */}
+        <p>{companyUrl} </p>
+        
+        <Button type="primary" > Offers </Button>
       </Card>
     </div>
   )
