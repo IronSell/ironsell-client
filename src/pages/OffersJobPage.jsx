@@ -1,7 +1,7 @@
 import axios from 'axios';
 import '../App.css';
 import Searchbar from '../components/Searchbar/Searchbar';
-import Test from '../components/CardOffers/Test';
+import CardOffer from '../components/CardOffers/CardOffer';
 import { useState, useEffect } from 'react';
 
 function OffersJobPage() {
@@ -20,7 +20,7 @@ function OffersJobPage() {
       <Searchbar />
       <h2>List of Job Offers</h2>
       {jobOffers.map((searchOffers, index) => (
-        <Test searchOffers={searchOffers} key={index + Date.now()} />
+        <CardOffer searchOffers={searchOffers} key={index + Date.now()} />
       ))}
     </div>
   );

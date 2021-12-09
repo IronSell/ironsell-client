@@ -1,6 +1,6 @@
 import { Card } from 'antd';
 import "./CardOffers.css";
-function Test(props) {
+function CardOffer(props) {
     const { searchOffers } = props
     console.log(searchOffers.jobTitle)
     const { Meta } = Card;
@@ -12,7 +12,6 @@ function Test(props) {
                 style={{ width: 240 }}
                 cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
             >
-
                 <Meta title={searchOffers.jobTitle} description={searchOffers.province} />
                 <p>{searchOffers.experienceYears}</p>
                 <p>Salary: {searchOffers.salary}</p>
@@ -23,4 +22,4 @@ function Test(props) {
     );
 }
 
-export default Test;
+export default CardOffer;
