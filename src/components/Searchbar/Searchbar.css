@@ -1,8 +1,7 @@
-.search-bar{
-    width: 30%;
-    
+.search-bar {
+  width: 30%;
 }
-.ContainerSearbar{
- background-color: rgba(238, 83, 83, 0.219);
-    padding: 3%;
+.ContainerSearbar {
+  background-color: rgba(238, 83, 83, 0.219);
+  padding: 3%;
 }

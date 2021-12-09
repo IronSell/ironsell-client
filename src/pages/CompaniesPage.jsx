@@ -17,7 +17,7 @@ const CompaniesPage = ()=>{
 
     return (
         <div className="CompaniesPage">
-            <h1>Companies</h1>
+            <h1>CompaniesPage</h1>
             <Searchbar />
             <h2>List of Companies</h2>
             {companiesList.map((searchCompany, index)  => (
