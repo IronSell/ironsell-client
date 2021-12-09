@@ -4,3 +4,4 @@ export const LOGINPAGE = "/auth/login";
 export const USERPAGE = "/userPage";
 export const OFFERSJOBPAGE = "/offers";
 export const COMPANIESPAGE = "/companies";
+export const COMPANYPAGE = `${COMPANIESPAGE}/details`;
