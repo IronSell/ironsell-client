@@ -1,5 +1,5 @@
 import '../App.css';
-import axios from 'axios';
+// import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { getCompany } from '../services/companies';
 
@@ -13,10 +13,10 @@ const CompanyPage = () => {
 
   useEffect(() => {
     getCompany(id).then((response) => {
-      console.log({ response });
+      // console.log({ response });
       setCompany(response.data.showCompany);
     });
-  }, []);
+  });
 
   return (
     <div className='CompanyPage'>
