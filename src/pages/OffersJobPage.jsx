@@ -19,9 +19,11 @@ function OffersJobPage() {
       <h1>OffersJobPage</h1>
       <Searchbar />
       <h2>List of Job Offers</h2>
+      <div className='offersStylesJobPage'>
       {jobOffers.map((searchOffers, index) => (
         <CardOffer searchOffers={searchOffers} key={index + Date.now()} />
       ))}
+      </div>
     </div>
   );
 }
