@@ -1,8 +1,9 @@
 import { Card, Button } from 'antd'
-
+import { Link } from "react-router-dom";
+import * as PATHS from "../../utils/paths";
 
 function CardCompanies(props) {
-  const { companyLogo, name, province, companyUrl } = props.searchCompany
+  const { companyLogo, name, province, companyUrl, _id } = props.searchCompany
   const { Meta } = Card
   return (
     <div className="App">
@@ -15,8 +16,9 @@ function CardCompanies(props) {
         
         <p>{companyUrl} </p>
         
-        <Button type="primary" > Offers </Button>
+        {/* <Button type="primary">Offers</Button> */}
       </Card>
+      <Link to={PATHS.COMPANYPAGE+'?id='+_id}>MORE INFO</Link>
     </div>
   )
 }

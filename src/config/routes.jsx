@@ -1,11 +1,13 @@
-import { Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import Login from "../pages/LogIn";
-import Signup from "../pages/Signup";
-import ProtectedPage from "../pages/ProtectedPage";
-import * as PATHS from "../utils/paths";
-import OffersJobPage from "../pages/OffersJobPage";
-import CompaniesPage from "../pages/CompaniesPage";
+import { Navigate } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import Login from '../pages/LogIn';
+import Signup from '../pages/Signup';
+import ProtectedPage from '../pages/ProtectedPage';
+import * as PATHS from '../utils/paths';
+import OffersJobPage from '../pages/OffersJobPage';
+import CompaniesPage from '../pages/CompaniesPage';
+import CompanyPage from '../pages/CompanyPage';
+
 const routes = (props) => {
   const { user } = props;
   return [
@@ -18,6 +20,10 @@ const routes = (props) => {
       element: <OffersJobPage {...props} />,
     },
     {
+      path: PATHS.COMPANYPAGE,
+      element: <CompanyPage {...props}/>
+    },
+    {
       path: PATHS.COMPANIESPAGE,
       element: <CompaniesPage {...props} />,
     },
@@ -25,7 +31,6 @@ const routes = (props) => {
       path: PATHS.SIGNUPPAGE,
       element: <Signup {...props} />,
     },
-
     {
       path: PATHS.LOGINPAGE,
       element: <Login {...props} />,

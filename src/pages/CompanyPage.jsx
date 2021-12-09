@@ -1,29 +1,30 @@
-import '../App.css'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-// import CardCompanyByUser from '../components/CardCompany/CardCompanyByUser'
-// import CardCompanyByCompany from '../components/CardCompany/CardCompanyByCompany'
+import '../App.css';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { getCompany } from '../services/companies';
 
 const CompanyPage = () => {
+  const [company, setCompany] = useState([]);
 
-    const [companyId, setCompanyId] = useState([])
+  let urlStr = window.location.href;
+  let url = new URL(urlStr);
+  let search_params = url.searchParams;
+  let id = search_params.get('id');
 
-    useEffect(() => {
-        axios.get('http://localhost:5005/api/companies/:_id').then((response) => {
-          console.log(response.data.showCompany)
-          setCompanyId(response.data.showCompany)
-        })
-      }, [])
+  useEffect(() => {
+    getCompany(id).then((response) => {
+      console.log({ response });
+      setCompany(response.data.showCompany);
+    });
+  }, []);
 
   return (
-    <div className="CompanyPage">
-      <h1>Companiy</h1>
-      <h2>List of Companies</h2>
-      <div>
-          {/* <CardCompanyByUser showCompany={showCompany} /> */}
-      </div>
+    <div className='CompanyPage'>
+      <h1>{company.name}</h1>
+      <h2>{company.companyDescription}</h2>
+      <div>{/* <CardCompanyByUser showCompany={showCompany} /> */}</div>
     </div>
-  )
-}
+  );
+};
 
-export default CompanyPage
+export default CompanyPage;
