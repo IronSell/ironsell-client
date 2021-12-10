@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import * as USER_HELPERS from '../utils/userToken';
 
-const UserPage = (props) => {
+const UserProfile = (props) => {
   const { authenticate, user } = props;
   useEffect(() => {
     axios
@@ -20,7 +20,7 @@ const UserPage = (props) => {
 
   return (
     <div>
-      <h1>User Page</h1>
+      <h1>User Profile</h1>
       <p>
         {user.name} {user.lastName}
       </p>
@@ -28,4 +28,4 @@ const UserPage = (props) => {
   );
 };
 
-export default UserPage;
+export default UserProfile;

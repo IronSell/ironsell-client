@@ -17,7 +17,7 @@ const Navbar = (props) => {
       <div className="nav__authLinks">
         {user ? (
           <>
-            <Link to={PATHS.USERPAGE} className="authLink">
+            <Link to={PATHS.USERPROFILE} className="authLink">
               {user.name} {user.lastName}
             </Link>
             <button className="nav-logoutbtn" onClick={handleLogout}>
