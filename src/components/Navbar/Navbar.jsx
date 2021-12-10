@@ -15,7 +15,9 @@ const Navbar = (props) => {
       <Link to={PATHS.COMPANIESPAGE}>Companies</Link>
 
       <div className="nav__authLinks">
+      {console.log(user)}
         {user ? (
+          
           <>
             <Link to={PATHS.USERPROFILE} className="authLink">
               {user.name} {user.lastName}

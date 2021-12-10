@@ -8,7 +8,7 @@ import Signup from '../pages/Signup';
 import * as PATHS from '../utils/paths';
 import OffersJobPage from '../pages/OffersJobPage';
 import CompanyPage from '../pages/CompanyPage';
-
+import CompanyProfile from "../pages/CompanyProfile";
 const routes = (props) => {
   const { user } = props;
   return [
