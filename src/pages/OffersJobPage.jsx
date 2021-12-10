@@ -9,7 +9,7 @@ function OffersJobPage() {
 
   useEffect(() => {
     axios.get('http://localhost:5005/api/offers').then((response) => {
-      console.log(response.data.searchOffers)
+      // console.log(response.data.searchOffers)
       setJobOffers(response.data.searchOffers)
     })
   }, [])
@@ -21,7 +21,9 @@ function OffersJobPage() {
       <h2>List of Job Offers</h2>
       <div className="offersStylesJobPage">
         {jobOffers.map((searchOffers, index) => (
-          <CardOffer searchOffers={searchOffers} key={index + Date.now()} />
+          <CardOffer 
+          searchOffers={searchOffers} 
+          key={index + Date.now()} />
         ))}
       </div>
     </div>

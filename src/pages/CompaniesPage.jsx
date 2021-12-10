@@ -10,7 +10,6 @@ const CompaniesPage = () => {
   useEffect(() => {
     axios.get('http://localhost:5005/api/companies').then((response) => {
       // console.log(response.data.searchCompany)
-
       setCompaniesList(response.data.searchCompany)
     })
   }, [])
