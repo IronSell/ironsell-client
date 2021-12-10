@@ -29,9 +29,15 @@ const getOffersService = axios.create({
   },
 });
 
-export function getOffers() {
+
+// const getOffersService = axios.create({
+//   baseURL: `${process.env.REACT_APP_SERVER_URL}/offers`,
+// }); // --> http://localhost:5005/api/offers
+
+
+export function getOffers(id) {
   return getOffersService
-    .get(`jobOffers`)
+    .get('/'+id)
     .then(successStatus)
     .catch(internalServerError);
 }
