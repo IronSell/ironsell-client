@@ -1,9 +1,9 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
-import { getCompany } from '../services/companies';
+import { getOffers } from '../services/offers';
 
-const CompanyPage = () => {
-  const [company, setCompany] = useState([]);
+const OfferPage = () => {
+  const [offer, setOffer] = useState([]);
 
   let urlStr = window.location.href;
   let url = new URL(urlStr);
@@ -11,19 +11,18 @@ const CompanyPage = () => {
   let id = search_params.get('id');
 
   useEffect(() => {
-    getCompany(id).then((response) => {
-      // console.log({ response });
-      setCompany(response.data.showCompany);
+    getOffers(id).then((response) => {
+      console.log({ response });
+      setOffer(response.data.showOffer);
     });
-  },[]);
+  });
 
   return (
-    <div className='CompanyPage'>
-      <h1>{company.name}</h1>
-      <h2>{company.companyDescription}</h2>
-      <div>{/* <CardCompanyByUser showCompany={showCompany} /> */}</div>
+    <div className='OfferPage'>
+      <h1>{offer.jobTitle}</h1>
+      <h2>{offer.salary}</h2>
     </div>
   );
 };
 
-export default CompanyPage;
+export default OfferPage;

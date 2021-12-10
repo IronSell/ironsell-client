@@ -1,13 +1,15 @@
 import { List, Avatar } from 'antd'
+import { Link } from 'react-router-dom';
+import * as PATHS from '../../utils/paths';
 import './CardOffers.css'
 
 function CardOffer(props) {
   const { searchOffers } = props
   const data = [
-    searchOffers
-  ];
+    searchOffers];
   return (
     <div className="App">
+      <Link to={PATHS.OFFERPAGE + '?id=' + searchOffers._id}>
       <List
         itemLayout="horizontal"
         dataSource={data}
@@ -20,7 +22,8 @@ function CardOffer(props) {
             />
           </List.Item>
         )}
-      />
+        />
+      </Link>
     </div>
   )
 }
