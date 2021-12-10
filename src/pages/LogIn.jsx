@@ -1,45 +1,67 @@
-import React, { useState } from "react";
-import { login } from "../services/auth";
-import { useNavigate } from "react-router-dom";
-import "./Signup";
-import * as PATHS from "../utils/paths";
-import * as USER_HELPERS from "../utils/userToken";
+import React, { useState } from 'react'
+import { login } from '../services/auth'
+import { useNavigate } from 'react-router-dom'
+import './Signup'
+import * as PATHS from '../utils/paths'
+import * as USER_HELPERS from '../utils/userToken'
+import { Modal, Button } from 'antd'
 
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
-  const { email, password } = form;
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
+    email: '',
+    password: '',
+  })
+  const { email, password } = form
+  const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
   function handleInputChange(event) {
-    const { name, value } = event.target;
+    const { name, value } = event.target
 
-    return setForm({ ...form, [name]: value });
+    return setForm({ ...form, [name]: value })
   }
 
   function handleFormSubmission(event) {
-    event.preventDefault();
+    event.preventDefault()
     const credentials = {
       email,
       password,
-    };
+    }
     login(credentials).then((res) => {
       if (!res.status) {
-        return setError({ message: "Invalid credentials" });
+        return setError({ message: 'Invalid credentials' })
       }
-      USER_HELPERS.setUserToken(res.data.accessToken);
-      authenticate(res.data.user);
-      navigate(PATHS.HOMEPAGE);
-    });
+      USER_HELPERS.setUserToken(res.data.accessToken)
+      authenticate(res.data.user)
+      navigate(PATHS.HOMEPAGE)
+    })
+  }
+  const [visible, setVisible] = React.useState(false)
+  const [confirmLoading, setConfirmLoading] = React.useState(false)
+  const [modalText, setModalText] = React.useState('Content of the modal')
+
+  const showModal = () => {
+    setVisible(true)
+  }
+
+  const handleOk = () => {
+    setModalText('The modal will be closed after two seconds')
+    setConfirmLoading(true)
+    setTimeout(() => {
+      setVisible(false)
+      setConfirmLoading(false)
+    }, 2000)
+  }
+
+  const handleCancel = () => {
+    console.log('Clicked cancel button')
+    setVisible(false)
   }
 
   return (
     <div>
       <h1>Log In</h1>
-      <form onSubmit={handleFormSubmission} className="signup__form">
+      <form onSubmit={handleFormSubmission} className="auth__form">
         <label htmlFor="input-email">Email</label>
         <input
           id="input-email"
@@ -74,6 +96,19 @@ export default function LogIn({ authenticate }) {
           Submit
         </button>
       </form>
+      <p>Don´t have an account yet?</p>
+      <Button type="primary" onClick={showModal}>
+        create account
+      </Button>
+      <Modal
+        title="Title"
+        visible={visible}
+        onOk={handleOk}
+        confirmLoading={confirmLoading}
+        onCancel={handleCancel}
+      >
+        <p>{modalText}</p>
+      </Modal>
     </div>
-  );
+  )
 }

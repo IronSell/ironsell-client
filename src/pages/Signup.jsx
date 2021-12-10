@@ -47,7 +47,7 @@ export default function Signup({ authenticate }) {
         <label htmlFor="input-username">Username</label>
         <input
           id="input-username"
-          type="text"
+          type="email"
           name="username"
           placeholder="Text"
           value={username}
