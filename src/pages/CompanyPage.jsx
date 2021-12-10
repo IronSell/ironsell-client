@@ -12,10 +12,10 @@ const CompanyPage = () => {
 
   useEffect(() => {
     getCompany(id).then((response) => {
-      // console.log({ response });
+      console.log( response.data );
       setCompany(response.data.showCompany);
     });
-  });
+  },[]);
 
   return (
     <div className='CompanyPage'>
