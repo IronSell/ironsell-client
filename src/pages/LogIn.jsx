@@ -1,102 +1,86 @@
-import React, { useState } from 'react'
-import { login } from '../services/auth'
-import { useNavigate, Link } from 'react-router-dom'
-import * as PATHS from '../utils/paths'
-import * as USER_HELPERS from '../utils/userToken'
-import { Modal, Button } from 'antd'
+import React, { useState } from 'react';
+import { login } from '../services/auth';
+import { useNavigate, Link } from 'react-router-dom';
+import * as PATHS from '../utils/paths';
+import * as USER_HELPERS from '../utils/userToken';
+import { Button, Input, Form, Alert } from 'antd';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
     email: '',
     password: '',
-  })
-  const { email, password } = form
-  const [error, setError] = useState(null)
-  const navigate = useNavigate()
+  });
+  const { email, password } = form;
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   function handleInputChange(event) {
-    const { name, value } = event.target
+    const { name, value } = event.target;
 
-    return setForm({ ...form, [name]: value })
+    return setForm({ ...form, [name]: value });
   }
 
   function handleFormSubmission(event) {
-    event.preventDefault()
+    event.preventDefault();
     const credentials = {
       email,
       password,
-    }
+    };
     login(credentials).then((res) => {
       if (!res.status) {
-        return setError({ message: 'Invalid credentials' })
+        return setError({ message: 'Invalid credentials' });
       }
-      USER_HELPERS.setUserToken(res.data.accessToken)
-      authenticate(res.data.user)
-      navigate(PATHS.HOMEPAGE)
-    })
-  }
-  const [visible, setVisible] = React.useState(false)
-  const [confirmLoading, setConfirmLoading] = React.useState(false)
-  const [modalText, setModalText] = React.useState('Content of the modal')
-
-  const showModal = () => {
-    setVisible(true)
-  }
-
-  const handleOk = () => {
-    setModalText('The modal will be closed after two seconds')
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
-  }
-
-  const handleCancel = () => {
-    console.log('Clicked cancel button')
-    setVisible(false)
+      USER_HELPERS.setUserToken(res.data.accessToken);
+      authenticate(res.data.user);
+      navigate(PATHS.HOMEPAGE);
+    });
   }
 
   return (
-    <div>
-      <h1>Log In</h1>
-      <form onSubmit={handleFormSubmission} className="auth__form">
-        <label htmlFor="input-email">Email</label>
-        <input
-          id="input-email"
-          type="email"
-          name="email"
-          placeholder="email"
-          value={email}
-          onChange={handleInputChange}
-          required
-        />
+    <div className='container'>
+      <form onSubmit={handleFormSubmission} className='auth__form'>
+        <div className='email'>
+          <Input
+            prefix={<MailOutlined className='site-form-item-icon' />}
+            id='input-email'
+            type='email'
+            name='email'
+            placeholder='Email'
+            value={email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
-        <label htmlFor="input-password">Password</label>
-        <input
-          id="input-password"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleInputChange}
-          required
-          minLength="8"
-        />
+        <div className='password'>
+          <Input.Password
+            prefix={<LockOutlined className='site-form-item-icon' />}
+            id='input-password'
+            type='password'
+            name='password'
+            placeholder='Password'
+            value={password}
+            onChange={handleInputChange}
+            required
+            minLength='8'
+          />
+        </div>
 
         {error && (
-          <div className="error-block">
-            <p>There was an error submiting the form:</p>
-            <p>{error.message}</p>
+          <div className='error-msg'>
+            <Alert message="Wrog credentials" type="error" showIcon />
           </div>
         )}
 
-      <Button className='button__submit' type="primary" htmlType='submit'>Log In</Button>
+        <Button className='login-form-button' type='primary' htmlType='submit'>
+          Log In
+        </Button>
+        <p>Don´t have an account yet?</p>
+        <Link to={PATHS.SIGNUPPAGE}>
+          <Button type='default'>Sign Up</Button>
+        </Link>
       </form>
-      <p>Don´t have an account yet?</p>
-      <Link to={PATHS.SIGNUPPAGE}>
-      <Button type="default">Sign Up</Button>
-      </Link>
     </div>
-  )
+  );
 }
