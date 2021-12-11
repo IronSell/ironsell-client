@@ -3,5 +3,6 @@
 }
 .ContainerSearbar {
   background-color: rgba(22, 124, 183, 0.65);
-  padding: 3%;
+  padding: 4%;
+  border-radius: 10px;
 }

@@ -1,0 +1,7 @@
+/* .cardOfferBorder{
+    border: 1px solid black;
+} */
+.cardOfferBorderListItem{
+    border: 1px solid black;
+    padding: 2%;
+}

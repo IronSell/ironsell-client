@@ -14,11 +14,11 @@ function CardOffer(props) {
         itemLayout="horizontal"
         dataSource={data}
         renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
+          <List.Item className='cardOfferBorder'>
+            <List.Item.Meta className='cardOfferBorderListItem'
               avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-              title={<a href="https://ant.design">{searchOffers.experienceYears}</a>}
-              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+              title={<a href="https://ant.design">{searchOffers.jobTitle}</a>}
+              description={searchOffers.description}
             />
           </List.Item>
         )}
