@@ -15,7 +15,7 @@ function OffersJobPage() {
   }, [])
 
   return (
-    <div className="ContainerOfferJobPage">
+    <div className="container">
       <h1>OffersJobPage</h1>
       <Searchbar />
       <h2>List of Job Offers</h2>

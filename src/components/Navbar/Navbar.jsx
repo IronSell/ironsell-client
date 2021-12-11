@@ -11,8 +11,12 @@ const Navbar = (props) => {
       <Link to={PATHS.HOMEPAGE} className='nav__projectName'>
         IronJob
       </Link>
-      <Link to={PATHS.OFFERSJOBPAGE}>Offers</Link>
-      <Link to={PATHS.COMPANIESPAGE}>Companies</Link>
+      <Link to={PATHS.OFFERSJOBPAGE} className='OfferAndCompanyColor'>
+        Offers
+      </Link>
+      <Link to={PATHS.COMPANIESPAGE} className='OfferAndCompanyColor'>
+        Companies
+      </Link>
 
       <div className='nav__authLinks'>
         {user ? (

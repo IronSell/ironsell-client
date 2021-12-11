@@ -28,7 +28,7 @@ const companiesService = axios.create({
 
 export function getCompany(id) {
   return companiesService
-    .get('/'+id)
+    .get('/' + id)
     .then(successStatus)
     .catch(internalServerError);
 }

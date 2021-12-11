@@ -3,7 +3,7 @@ nav {
   padding: 1em;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background: #84DFFF;
+  background: rgba(184,125,166);
   font-weight: 600;
 }
 
@@ -13,9 +13,15 @@ nav {
 }
 
 .authLink {
-  color: #5595ff;;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+}
+.OfferAndCompanyColor{
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
 }
 
 .authLink + .authLink {

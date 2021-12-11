@@ -15,10 +15,11 @@ const OfferPage = () => {
       console.log({ response });
       setOffer(response.data.showOffer);
     });
-  });
+  }, []);
 
   return (
     <div className='OfferPage'>
+      <h1>Hola</h1>
       <h1>{offer.jobTitle}</h1>
       <h2>{offer.salary}</h2>
     </div>

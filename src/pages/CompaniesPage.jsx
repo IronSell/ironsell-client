@@ -15,16 +15,16 @@ const CompaniesPage = () => {
   }, [])
 
   return (
-    <div className="CompaniesPage">
+    <div className="container">
       <h1>CompaniesPage</h1>
       <Searchbar />
       <h2>List of Companies</h2>
       <div className="companiesStylesJobPage">
         {companiesList.map((searchCompany, index) => (
           <CardCompanies
-            searchCompany={searchCompany}
-            key={index + Date.now()}
-          />
+          searchCompany={searchCompany}
+          key={index + Date.now()} 
+        />
         ))}
       </div>
     </div>
