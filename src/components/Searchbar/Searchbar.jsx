@@ -1,12 +1,13 @@
 import "./Searchbar.css";
+import { Input } from 'antd';
 
+const { Search } = Input;
 
 const Searchbar = () => {
 
 return (
-    <div className="ContainerSearbar">
-            <input type="text" className= "search-bar"/>
-            <button>search</button>
+    <div className="Container">
+            <Search placeholder="input search text" enterButton="Search" size="large" loading />
     </div>
 
 
