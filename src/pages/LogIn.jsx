@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { login } from '../services/auth'
-import { useNavigate } from 'react-router-dom'
-import './Signup'
+import { useNavigate, Link } from 'react-router-dom'
 import * as PATHS from '../utils/paths'
 import * as USER_HELPERS from '../utils/userToken'
 import { Modal, Button } from 'antd'
@@ -92,23 +91,12 @@ export default function LogIn({ authenticate }) {
           </div>
         )}
 
-        <button className="button__submit" type="submit">
-          Submit
-        </button>
+      <Button className='button__submit' type="primary" htmlType='submit'>Log In</Button>
       </form>
       <p>Don´t have an account yet?</p>
-      <Button type="primary" onClick={showModal}>
-        create account
-      </Button>
-      <Modal
-        title="Title"
-        visible={visible}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-      >
-        <p>{modalText}</p>
-      </Modal>
+      <Link to={PATHS.SIGNUPPAGE}>
+      <Button type="default">Sign Up</Button>
+      </Link>
     </div>
   )
 }
