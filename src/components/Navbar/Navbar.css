@@ -3,25 +3,33 @@ nav {
   padding: 1em;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background: rgba(184,125,166);
+  /* background: rgba(184,125,166, 0.80); */
+  /* background: rgb(154, 119, 177); */
+  background: linear-gradient(
+    90deg,
+    rgba(154, 119, 177, 0.8) 0%,
+    rgba(184, 125, 166, 0.8) 81%
+  );
   font-weight: 600;
 }
 
 .nav__projectName {
-  color: #e4f9ff;
+  color: #fff;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .authLink {
+  font-size: 1.2rem;
   color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
-.OfferAndCompanyColor{
+.OfferAndCompanyColor {
+  font-size: 1.2rem;
   color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
-
 }
 
 .authLink + .authLink {
