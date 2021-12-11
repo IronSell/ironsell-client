@@ -1,6 +1,10 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
 import { getCompany } from '../services/companies';
+import { Collapse } from 'antd';
+const { Panel } = Collapse;
+
+
 
 const CompanyPage = () => {
   const [company, setCompany] = useState([]);
@@ -17,11 +21,24 @@ const CompanyPage = () => {
   },[]);
 
   return (
-    <div className='CompanyPage'>
-      <h1>{company.name}</h1>
-      <h2>{company.companyDescription}</h2>
-      <div>{/* <CardCompanyByUser showCompany={showCompany} /> */}</div>
+
+    <div className='container  companyContainer'>
+      <div className='header'>
+        <h1>{company.name}</h1>
+      </div>
+        <h2>{company.professionalSector}</h2>
+        <p>{company.address} {company.province}</p>
+        <p>{company.companyUrl} {company.cif}</p>
+        {/* <p>Card content</p>
+        <p>Card content</p> */}
+        
+        <p>{company.companyDescription}</p>
+        {/* <div>{company.jobOffers}</div> */}
+            <p>{company.jobOffers}</p>
+        <p>Card content</p>
     </div>
+
+   
   );
 };
 
