@@ -12,7 +12,6 @@ const CompanyPage = () => {
 
   useEffect(() => {
     getCompany(id).then((response) => {
-      console.log( response.data );
       setCompany(response.data.showCompany);
     });
   },[]);
