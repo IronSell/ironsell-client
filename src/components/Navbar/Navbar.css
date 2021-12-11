@@ -1,7 +1,7 @@
 nav {
   display: flex;
   padding: 1em;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   background: #84DFFF;
   font-weight: 600;
