@@ -1,6 +1,8 @@
 export const HOMEPAGE = "/";
-export const SIGNUPPAGE = "/auth/signup";
-export const LOGINPAGE = "/auth/login";
+export const SIGNUPCANDIDATEPAGE = "/auth/signup/candidate";
+export const SIGNUPCOMPANYPAGE = "/auth/signup/company"
+export const LOGINCANDIDATEPAGE = "/auth/login/candidate";
+export const LOGINCOMPANYPAGE = "/auth/login/company";
 export const USERPROFILE = "/userProfile";
 export const OFFERSJOBPAGE = "/offers";
 export const OFFERPAGE = `${OFFERSJOBPAGE}/details`

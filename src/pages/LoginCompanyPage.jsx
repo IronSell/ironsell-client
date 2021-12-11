@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { login } from '../services/auth';
+import { loginCompany } from '../services/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import * as PATHS from '../utils/paths';
 import * as USER_HELPERS from '../utils/userToken';
@@ -27,7 +27,7 @@ export default function LogIn({ authenticate }) {
       email,
       password,
     };
-    login(credentials).then((res) => {
+    loginCompany(credentials).then((res) => {
       if (!res.status) {
         return setError({ message: 'Invalid credentials' });
       }
@@ -62,7 +62,7 @@ export default function LogIn({ authenticate }) {
             placeholder='Password'
             value={password}
             onChange={handleInputChange}
-            required
+            required={true}
             minLength='8'
           />
         </div>
@@ -77,7 +77,7 @@ export default function LogIn({ authenticate }) {
           Log In
         </Button>
         <p>Don´t have an account yet?</p>
-        <Link to={PATHS.SIGNUPPAGE}>
+        <Link to={PATHS.SIGNUPCOMPANYPAGE}>
           <Button type='default'>Sign Up</Button>
         </Link>
       </form>

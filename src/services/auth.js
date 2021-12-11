@@ -34,6 +34,14 @@ export function login(credentials) {
     .catch(internalServerError);
 }
 
+// Axios call to /api/login/company
+export function loginCompany(credentials) {
+  return authService
+    .post("/login/company", credentials)
+    .then(successStatus)
+    .catch(internalServerError);
+}
+
 export function getLoggedIn() {
   return authService
     .get(`session`, {

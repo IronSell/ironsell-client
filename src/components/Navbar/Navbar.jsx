@@ -26,11 +26,11 @@ const Navbar = (props) => {
           </>
         ) : (
           <>
-            <Link to={PATHS.SIGNUPPAGE} className='authLink'>
-              Signup
+            <Link to={PATHS.LOGINCOMPANYPAGE} className='authLink'>
+              Company Access
             </Link>
-            <Link to={PATHS.LOGINPAGE} className='authLink'>
-              Log In
+            <Link to={PATHS.LOGINCANDIDATEPAGE} className='authLink'>
+              Candidates Access
             </Link>
           </>
         )}

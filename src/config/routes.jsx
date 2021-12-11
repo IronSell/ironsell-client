@@ -1,7 +1,8 @@
 
 import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import Login from "../pages/LogIn";
+import LoginCandidatePage from "../pages/LogInCandidatePage";
+import LoginCompanyPage from '../pages/LoginCompanyPage';
 import UserProfile from "../pages/UserProfile";
 import CompaniesPage from "../pages/CompaniesPage";
 import Signup from '../pages/Signup';
@@ -29,19 +30,27 @@ const routes = (props) => {
       element: <CompaniesPage {...props} />,
     },
     {
-      path: PATHS.SIGNUPPAGE,
+      path: PATHS.SIGNUPCANDIDATEPAGE,
       element: <Signup {...props} />,
     },
     {
-      path: PATHS.LOGINPAGE,
-      element: <Login {...props} />,
+      path: PATHS.SIGNUPCOMPANYPAGE,
+      element: <Signup {...props} />,
+    },
+    {
+      path: PATHS.LOGINCANDIDATEPAGE,
+      element: <LoginCandidatePage {...props} />,
+    },
+    {
+      path: PATHS.LOGINCOMPANYPAGE,
+      element: <LoginCompanyPage {...props} />,
     },
     {
       path: PATHS.USERPROFILE,
       element: user ? (
         <UserProfile {...props} />
       ) : (
-        <Navigate to={PATHS.LOGINPAGE} replace />
+        <Navigate to={PATHS.HOMEPAGE} replace />
       ),
     },
   ];
