@@ -39,6 +39,7 @@ export default function LogIn({ authenticate }) {
 
   return (
     <div className='container'>
+      <h1>Access as a Company</h1>
       <form onSubmit={handleFormSubmission} className='auth__form'>
         <div className='email'>
           <Input
