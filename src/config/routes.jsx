@@ -1,15 +1,16 @@
-
-import { Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import LoginCandidatePage from "../pages/LogInCandidatePage";
+import { Navigate } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import LoginCandidatePage from '../pages/LogInCandidatePage';
 import LoginCompanyPage from '../pages/LoginCompanyPage';
-import UserProfile from "../pages/UserProfile";
-import CompaniesPage from "../pages/CompaniesPage";
+import UserProfile from '../pages/UserProfile';
+import CompaniesPage from '../pages/CompaniesPage';
 import Signup from '../pages/Signup';
 import * as PATHS from '../utils/paths';
 import OffersJobPage from '../pages/OffersJobPage';
 import CompanyPage from '../pages/CompanyPage';
-import CompanyProfile from "../pages/CompanyProfile";
+import CompanyProfile from '../pages/CompanyProfile';
+import OfferPage from '../pages/OfferPage';
+
 const routes = (props) => {
   const { user } = props;
   return [
@@ -22,8 +23,12 @@ const routes = (props) => {
       element: <OffersJobPage {...props} />,
     },
     {
+      path: PATHS.OFFERPAGE,
+      element: <OfferPage {...props} />,
+    },
+    {
       path: PATHS.COMPANYPAGE,
-      element: <CompanyPage {...props}/>
+      element: <CompanyPage {...props} />,
     },
     {
       path: PATHS.COMPANIESPAGE,
