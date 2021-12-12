@@ -21,9 +21,15 @@ const Navbar = (props) => {
       <div className='nav__authLinks'>
         {user ? (
           <>
-            <Link to={PATHS.USERPROFILE} className='authLink'>
-              {user.name} {user.lastName}
-            </Link>
+            {user.isCompany ? (
+              <Link to={PATHS.COMPANYPROFILE} className='authlink'>
+                {user.name}
+              </Link>
+            ) : (
+              <Link to={PATHS.USERPROFILE} className='authLink'>
+                {user.name} {user.lastName}
+              </Link>
+            )}
             <button className='nav-logoutbtn' onClick={handleLogout}>
               Logout
             </button>

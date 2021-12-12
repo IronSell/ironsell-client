@@ -76,7 +76,7 @@ export default function LogIn({ authenticate }) {
         <Button className='login-form-button' type='primary' htmlType='submit'>
           Log In
         </Button>
-        <p>Don´t have an account yet?</p>
+        <p>Don't have an account yet?</p>
         <Link to={PATHS.SIGNUPCOMPANYPAGE}>
           <Button type='default'>Sign Up</Button>
         </Link>

@@ -30,6 +30,14 @@ const routes = (props) => {
       element: <CompaniesPage {...props} />,
     },
     {
+      path: PATHS.COMPANYPROFILE,
+      element: user ? (
+        <CompanyProfile {...props} />
+      ) : (
+        <Navigate to={PATHS.HOMEPAGE} replace />
+      ),
+    },
+    {
       path: PATHS.SIGNUPCANDIDATEPAGE,
       element: <Signup {...props} />,
     },
