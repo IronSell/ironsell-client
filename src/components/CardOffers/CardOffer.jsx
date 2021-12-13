@@ -30,7 +30,6 @@ function CardOffer(props) {
           />
           <p className='space cardOfferBorderListItem'> 
           <span><EnvironmentOutlined className='offerLogo'/></span> {searchOffers.province} <span className='asdf'>|</span> <span><EuroCircleOutlined className='offerLogo'/></span> {searchOffers.salary} <span className='asdf'>|</span> <span><CalendarOutlined className='offerLogo'/></span> {date.toLocaleDateString('es-ES')} </p>
-          {/* <p>{searchOffers.createdAt}</p> */}
       </Link>
     </div>
   );
