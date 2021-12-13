@@ -9,3 +9,4 @@ export const OFFERPAGE = `${OFFERSJOBPAGE}/details`;
 export const COMPANIESPAGE = "/companies";
 export const COMPANYPAGE = `${COMPANIESPAGE}/details`
 export const COMPANYPROFILE = "/companyProfile";
+export const CANDIDATESPAGE = "/candidates"

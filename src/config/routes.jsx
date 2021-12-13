@@ -10,6 +10,7 @@ import OffersJobPage from '../pages/OffersJobPage';
 import CompanyPage from '../pages/CompanyPage';
 import CompanyProfile from '../pages/CompanyProfile';
 import OfferPage from '../pages/OfferPage';
+import CandidatesPage from '../pages/CandidatesPage';
 
 const routes = (props) => {
   const { user } = props;
@@ -33,6 +34,10 @@ const routes = (props) => {
     {
       path: PATHS.COMPANIESPAGE,
       element: <CompaniesPage {...props} />,
+    },
+    {
+      path: PATHS.CANDIDATESPAGE,
+      element: <CandidatesPage {...props} />,
     },
     {
       path: PATHS.COMPANYPROFILE,

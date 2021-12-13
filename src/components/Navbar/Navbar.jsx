@@ -6,6 +6,7 @@ import * as PATHS from '../../utils/paths';
 
 const Navbar = (props) => {
   const { user, handleLogout } = props;
+ 
   return (
     <nav>
       <Link to={PATHS.HOMEPAGE} className='nav__projectName'>
@@ -16,6 +17,9 @@ const Navbar = (props) => {
       </Link>
       <Link to={PATHS.COMPANIESPAGE} className='OfferAndCompanyColor'>
         Companies
+      </Link>
+      <Link to={PATHS.CANDIDATESPAGE} className='OfferAndCompanyColor'>
+          Candidates
       </Link>
 
       <div className='nav__authLinks'>
