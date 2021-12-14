@@ -9,27 +9,21 @@ const CandidatesPage = ()=>{
 
   useEffect(() => {
     axios.get('http://localhost:5005/api/candidates').then((response) => {
-        setcandidatesList(response.data.showCandidates)
+        setcandidatesList(response.data.getCandidates)
     })
   }, [])
     return(
-<div className="container">
+  <div className="container">
       <h1>CandidatesPage</h1>
       <Searchbar />
-        <h1>List of candidates</h1>
-        <CardCandidate />
-        
-{/*         
-      <div className="candidatesPage">
-        {candidatesList.map((showCandidates, index) => (
-
-          <CardCandidate
-          showCandidates={showCandidates}
-          key={index + Date.now()} 
+      <h1>List of candidates</h1>
+      {candidatesList.map((getCandidates, index)=>(
+        <CardCandidate 
+        getCandidates={getCandidates} 
+        key={index + Date.now()}
         />
-        ))}
-      </div> */}
-    </div>
+      ))}
+  </div>
     )
 }
 
