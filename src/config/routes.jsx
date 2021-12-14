@@ -11,6 +11,7 @@ import CompanyPage from '../pages/CompanyPage';
 import CompanyProfile from '../pages/CompanyProfile';
 import OfferPage from '../pages/OfferPage';
 import CandidatesPage from '../pages/CandidatesPage';
+import CandidateProfile from '../pages/CandidateProfile'
 
 const routes = (props) => {
   const { user } = props;
@@ -38,6 +39,10 @@ const routes = (props) => {
     {
       path: PATHS.CANDIDATESPAGE,
       element: <CandidatesPage {...props} />,
+    },
+    {
+      path: PATHS.CANDIDATEPROFILE,
+      element: <CandidateProfile {...props} />,
     },
     {
       path: PATHS.COMPANYPROFILE,

@@ -2,8 +2,11 @@ import { List, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import * as PATHS from '../../utils/paths';
 import './CardOffers.css';
-import { CalendarOutlined, EnvironmentOutlined, EuroCircleOutlined } from  '@ant-design/icons';
-
+import {
+  CalendarOutlined,
+  EnvironmentOutlined,
+  EuroCircleOutlined,
+} from '@ant-design/icons';
 
 function CardOffer(props) {
   const { searchOffers } = props;
@@ -23,13 +26,24 @@ function CardOffer(props) {
                 avatar={<Avatar src='https://joeschmoe.io/api/v1/random' />}
                 title={searchOffers.jobTitle}
                 description={searchOffers.description}
-                />
-              
+              />
             </List.Item>
           )}
-          />
-          <p className='space cardOfferBorderListItem'> 
-          <span><EnvironmentOutlined className='offerLogo'/></span> {searchOffers.province} <span className='asdf'>|</span> <span><EuroCircleOutlined className='offerLogo'/></span> {searchOffers.salary} <span className='asdf'>|</span> <span><CalendarOutlined className='offerLogo'/></span> {date.toLocaleDateString('es-ES')} </p>
+        />
+        <p className='space cardOfferBorderListItem'>
+          <span>
+            <EnvironmentOutlined className='offerLogo' />
+          </span>{' '}
+          {searchOffers.province} | {searchOffers.salary}{' '}
+          <span>
+            <EuroCircleOutlined className='offerLogo' />
+          </span>{' '}
+          |
+          <span>
+            <CalendarOutlined className='offerLogo' />
+          </span>{' '}
+          {date.toLocaleDateString('es-ES')}{' '}
+        </p>
       </Link>
     </div>
   );

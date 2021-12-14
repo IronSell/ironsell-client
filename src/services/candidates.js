@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import * as USER_HELPERS from '../utils/userToken';
 
 function internalServerError(err) {
@@ -21,11 +22,12 @@ function successStatus(res) {
   };
 }
 
-// creates a basic url for every request in this file
 const candidatesService = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}/candidates`,
 }); // --> http://localhost:5005/api/candidates
+// creates a basic url for every request in this file
 
+// GET candidate profile
 export function getCompany(id) {
   return candidatesService
     .get('/' + id)
