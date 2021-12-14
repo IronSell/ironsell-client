@@ -4,21 +4,18 @@ import './CardCandidate.css'
 
 
 function CardCandidate(props) {
-    const { name, lastName, province,profilePicture,professionalProfiles,_id } = props.getCandidates;
+    const { name, lastName, province, profession, profilePicture, _id } = props.getCandidates;
     return (
       <div className='cardCandidate'>
-        {/* <Link to={PATHS.CANDIDATEPAGE + '?id=' + _id}> */}
+        <Link to={PATHS.CANDIDATEPAGE + '?id=' + _id}>
         <div className="card-container">
-        <img className="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+        <img className="round" src={profilePicture} alt="user" />
         <h3>{name} {lastName}</h3>
         <h6>{province}</h6>
-        <p>User interface designer and <br/> front-end developer</p>
+        <p>{profession}</p>
         <div className="buttons">
             <button className="primary">
-                Message
-            </button>
-            <button className="primary ghost">
-                Following
+                About
             </button>
         </div>
         <div className="skills">
@@ -34,11 +31,7 @@ function CardCandidate(props) {
 		    </ul>
 	    </div>
     </div>
-
-<footer>
-	
-</footer>
-        {/* </Link> */}
+        </Link>
       </div>
     );
   }
