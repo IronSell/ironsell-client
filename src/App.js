@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
-
+import Footer from "./components/Footer/Footer";
 
 
 export default function App() {
@@ -60,7 +60,7 @@ export default function App() {
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
       </Routes>
-      
+      <Footer/>
     </div>
   );
 }

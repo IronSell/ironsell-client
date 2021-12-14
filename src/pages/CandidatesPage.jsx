@@ -24,7 +24,6 @@ const CandidatesPage = (props) => {
     <div className='container'>
       <h1>CandidatesPage</h1>
       <Searchbar />
-      <h1>List of candidates</h1>
       {candidatesList.map((getCandidates) => (
         <CardCandidate getCandidates={getCandidates} key={getCandidates._id} />
       ))}

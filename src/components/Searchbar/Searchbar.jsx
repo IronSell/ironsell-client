@@ -21,3 +21,7 @@ return (
 }
 
 export default Searchbar
+
+//usestate para guardar formulario
+//onchange
+//Handlesubmit-funcion que llame a el backend "axios" a una ruta con .params o .body
