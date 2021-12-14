@@ -7,7 +7,7 @@ function CardCandidate(props) {
     const { name, lastName, province, profession, profilePicture, _id } = props.getCandidates;
     return (
       <div className='cardCandidate'>
-        <Link to={PATHS.CANDIDATEPAGE + '?id=' + _id}>
+        {/* <Link to={PATHS.CANDIDATESPAGE + '?id=' + _id}> */}
         <div className="card-container">
         <img className="round" src={profilePicture} alt="user" />
         <h3>{name} {lastName}</h3>
@@ -31,7 +31,7 @@ function CardCandidate(props) {
 		    </ul>
 	    </div>
     </div>
-        </Link>
+        {/* </Link> */}
       </div>
     );
   }
