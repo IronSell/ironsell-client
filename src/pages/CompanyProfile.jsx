@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import * as USER_HELPERS from '../utils/userToken';
+import CompanyView from '../components/CompanyProfile/CompanyView';
 
 const CompanyProfile = (props) => {
   const { authenticate, user } = props;
@@ -16,13 +17,10 @@ const CompanyProfile = (props) => {
         authenticate(response.data.showCompany);
       });
   }, []);
-
+  console.log(user)
   return (
     <div>
-      <h1>{user.name}</h1>
-      {/* <p>
-        {user.name}
-      </p> */}
+      <CompanyView user={user} />
     </div>
   );
 };
