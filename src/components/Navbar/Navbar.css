@@ -3,8 +3,6 @@ nav {
   padding: 1em;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* background: rgba(184,125,166, 0.80); */
-  /* background: rgb(154, 119, 177); */
   background: linear-gradient(
     90deg,
     rgba(154, 119, 177, 0.8) 0%,
