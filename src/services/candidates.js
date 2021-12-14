@@ -28,7 +28,7 @@ const candidatesService = axios.create({
 // creates a basic url for every request in this file
 
 // GET candidate profile
-export function getCompany(id) {
+export function getCandidate(id) {
   return candidatesService
     .get('/' + id)
     .then(successStatus)
