@@ -1,7 +1,7 @@
 import axios from 'axios'
 import '../App.css'
 import Searchbar from '../components/Searchbar/Searchbar'
-import CardOffer from '../components/CardOffers/CardOffer'
+import CardOffer from '../components/CardOffers/CardOffers'
 import { useState, useEffect } from 'react'
 
 function OffersJobPage() {
