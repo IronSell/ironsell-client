@@ -4,13 +4,23 @@ import './Navbar.css';
 import * as PATHS from '../../utils/paths';
 import { Button } from 'antd';
 
+
+import { useContext } from 'react';
+import { ThemeContext } from './../../context/theme.context'
+
+
 // import * as CONSTS from "../../utils/consts";
 
 const Navbar = (props) => {
   const { user, handleLogout } = props;
 
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
+
   return (
-    <nav>
+    <nav className={`Navbar ${theme}`}>
+
+    {/*  <nav > */}
       <Link to={PATHS.HOMEPAGE} className='nav__projectName'>
         IronJob
       </Link>
@@ -54,6 +64,10 @@ const Navbar = (props) => {
           </>
         )}
       </div>
+      {/* -----dark mode */}
+      <button className="theme-btn" onClick={toggleTheme}>
+                {theme === 'light' ? 'dark ' : 'light '}
+            </button>
     </nav>
   );
 };
