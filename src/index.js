@@ -4,10 +4,17 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "antd/dist/antd.css";
+
+import { ThemeProviderWrapper } from './context/theme.context'
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+
+    <ThemeProviderWrapper>
       <App />
+    </ThemeProviderWrapper>
+
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
