@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* dark theme */
+.theme-btn {
+  padding: 2px 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+
+
+.light {
+  background-color: #efeded;
+}
+
+.dark {
+  background-color: #18191a;
+}
+
+.Navbar.light {
+  background-color: #ffffff;
+}
+
+.Navbar.dark {
+  background-color: #252526;
+}
+
+.light a,
+.light p,
+.light h1,
+.light h3 {
+  color: #000000;
+}
+
+.dark a,
+.dark p,
+.dark h1,
+.dark h3 {
+  color: #ffffff;
+}
+
+body{
+  background-color: #252526;
+
+}
+
