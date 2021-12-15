@@ -13,6 +13,7 @@ function CompanyView(props) {
     province,
     companyUrl,
     companyLogo,
+    jobOffers,
   } = props.user;
 
   const { Title, Text } = Typography;
@@ -26,10 +27,16 @@ function CompanyView(props) {
           <Title level={3}>{name}</Title>
           <div className='logo-container'>
             <Text>
-              <span className='icon'><EnvironmentOutlined /></span> {address}
+              <span className='icon'>
+                <EnvironmentOutlined />
+              </span>{' '}
+              {address}
             </Text>
             <Text>
-            <span className='icon'><MailOutlined /></span> <a href={companyUrl}>{companyUrl}</a>
+              <span className='icon'>
+                <MailOutlined />
+              </span>{' '}
+              <a href={companyUrl}>{companyUrl}</a>
             </Text>
             {/* <Anchor className='company-anchor'>
             <Link href={companyUrl} title={companyUrl}></Link>
