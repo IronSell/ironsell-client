@@ -1,9 +1,9 @@
 import "./Searchbar.css";
 import { Input } from 'antd';
-
 const { Search } = Input;
-
+// import { useState } from "react";
 const Searchbar = () => {
+//  const [searchbaroffers, setsearchbarOffers] = useState([])
 
 return (
 
