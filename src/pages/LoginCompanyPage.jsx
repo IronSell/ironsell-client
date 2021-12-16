@@ -3,7 +3,7 @@ import { loginCompany } from '../services/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import * as PATHS from '../utils/paths';
 import * as USER_HELPERS from '../utils/userToken';
-import { Button, Input, Form, Alert } from 'antd';
+import { Button, Input, Alert } from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
 export default function LogIn({ authenticate }) {

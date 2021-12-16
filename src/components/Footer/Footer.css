@@ -15,5 +15,16 @@
 .columsFooter {
   align-items: center;
   justify-content: space-evenly;
-  padding-bottom: 5px;
+  padding: 5px;
+}
+
+.columsFooter p{
+  margin-bottom: 2px;
+}
+svg {
+  width: 1.8em;
+  height: 1.8em;
+  margin: 5px;
+  margin-top: 0;
+  fill: currentcolor;
 }
