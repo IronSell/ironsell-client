@@ -1,24 +1,28 @@
-import axios from 'axios'
+
 import '../App.css'
 import Searchbar from '../components/Searchbar/Searchbar'
 import CardOffer from '../components/CardOffers/CardOffers'
 import { useState, useEffect } from 'react'
+import { getOffers } from '../services/offers';
 
 function OffersJobPage() {
-  const [jobOffers, setJobOffers] = useState([])
+  const [fileteredOffers, setFilteredOffers] = useState([])
+  const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5005/api/offers').then((response) => {
-      setJobOffers(response.data.searchOffers)
-    })
+    getOffers().then((response) => {
+      console.log(response.data)
+      setOffers(response.data.searchOffers);
+      setFilteredOffers(response.data.searchOffers)
+  });
   }, [])
 
   return (
     <div className="container ">
       <h1>OffersJobPage</h1>
-      <Searchbar />
+      <Searchbar setFilteredOffers={setFilteredOffers} offers={offers}/>
       <div className="offersStylesJobPage">
-        {jobOffers.map((searchOffers, index) => (
+        {fileteredOffers?.map((searchOffers, index) => (
           <CardOffer 
           searchOffers={searchOffers} 
           key={index + Date.now()} />

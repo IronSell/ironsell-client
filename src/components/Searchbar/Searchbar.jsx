@@ -1,21 +1,28 @@
 import "./Searchbar.css";
 import { Input } from 'antd';
 const { Search } = Input;
-// import { useState } from "react";
-const Searchbar = () => {
-//  const [searchbaroffers, setsearchbarOffers] = useState([])
 
-return (
+const Searchbar = (props) => {
+    const {offers, setFilteredOffers} = props
+    
+    const handleInputChange = (word) => {
+        const searchProducts = offers.filter((offer) => {
+            return offer.jobTitle.toLowerCase().includes(word.toLowerCase())
+        })
+        setFilteredOffers(searchProducts)
+    }
 
-    <div className="container">
-        <div className="ContainerSearbar">
-            <Search placeholder="input search text" enterButton="Search" size="large" />
+    return (
+
+        <div className="container">
+            <div className="ContainerSearbar">
+                <Search onChange={(event) => handleInputChange(event.target.value)} placeholder="input search text" enterButton="Search" size="large"  />
+            </div>
+
         </div>
-            
-    </div>
 
 
-)
+    )
 
 
 }
