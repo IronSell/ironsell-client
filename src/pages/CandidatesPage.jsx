@@ -24,9 +24,11 @@ const CandidatesPage = (props) => {
     <div className='container'>
       <h1>CandidatesPage</h1>
       <Searchbar />
+      <div className='flexbox'>
       {candidatesList.map((getCandidates) => (
         <CardCandidate getCandidates={getCandidates} key={getCandidates._id} />
       ))}
+      </div>
     </div>
   );
 };

@@ -4,18 +4,10 @@
 	box-sizing: border-box;
 }
 
-/* .cardCandidate {
-	background-color: #28223F;
-	font-family: Montserrat, sans-serif;
-	
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+.cardCandidate {
+	margin-bottom: 25px;
 
-	min-height: 100vh;
-	margin: 0;
-} */
+}
 
 h3 {
 	margin: 10px 0;
@@ -38,7 +30,8 @@ p {
 	color: #1F1A36;
 	padding-top: 30px;
 	position: relative;
-	width: 320px;
+	width: 280px;
+	/* height: 350px; */
 	max-width: 100%;
 	text-align: center;
 }
