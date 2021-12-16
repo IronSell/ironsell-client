@@ -26,9 +26,16 @@ const getOffersService = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}/offers`,
 });
 
-export function getOffers(id) {
+export function getOffer(id) {
   return getOffersService
     .get('/' + id)
+    .then(successStatus)
+    .catch(internalServerError);
+}
+
+export function getOffers() {
+  return getOffersService
+    .get()
     .then(successStatus)
     .catch(internalServerError);
 }

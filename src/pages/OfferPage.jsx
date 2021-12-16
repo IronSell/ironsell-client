@@ -1,9 +1,10 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
-import { getOffers } from '../services/offers';
+import { getOffer } from '../services/offers';
 
 const OfferPage = () => {
   const [offer, setOffer] = useState([]);
+ 
 
   let urlStr = window.location.href;
   let url = new URL(urlStr);
@@ -11,8 +12,7 @@ const OfferPage = () => {
   let id = search_params.get('id');
 
   useEffect(() => {
-    getOffers(id).then((response) => {
-      console.log({ response });
+    getOffer(id).then((response) => {
       setOffer(response.data.showOffer);
     });
   }, []);
