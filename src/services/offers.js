@@ -24,7 +24,7 @@ function successStatus(res) {
 // creates a basic url for every request in this file
 const getOffersService = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}/offers`,
-}); // http://localhost:5005/api/offers
+});
 
 export function getOffer(id) {
   return getOffersService

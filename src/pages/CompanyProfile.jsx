@@ -8,7 +8,7 @@ const CompanyProfile = (props) => {
   const { authenticate, user } = props;
   useEffect(() => {
     axios
-      .get(`http://localhost:5005/api/companies/profile/${user._id}`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/companies/profile/${user._id}`, {
         headers: {
           Authorization: USER_HELPERS.getUserToken(),
         },

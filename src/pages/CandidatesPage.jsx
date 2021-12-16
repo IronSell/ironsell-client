@@ -10,7 +10,7 @@ const CandidatesPage = (props) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5005/api/candidates', {
+      .get(`${process.env.REACT_APP_SERVER_URL}/candidates`, {
         headers: {
           Authorization: USER_HELPERS.getUserToken(),
         },
