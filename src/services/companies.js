@@ -32,3 +32,10 @@ export function getCompany(id) {
     .then(successStatus)
     .catch(internalServerError);
 }
+
+export function getCompanies() {
+  return companiesService
+    .get()
+    .then(successStatus)
+    .catch(internalServerError);
+}
