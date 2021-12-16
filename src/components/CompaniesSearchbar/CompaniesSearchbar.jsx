@@ -1,15 +1,15 @@
-import './Searchbar.css'
+import '../CompaniesSearchbar/CompaniesSearchbar.css'
 import { Input } from 'antd'
 const { Search } = Input
 
-const Searchbar = (props) => {
-  const { offers, setFilteredOffers } = props
+const SearchbarCompanies = (props) => {
+  const { companies, setFilteredCompanies } = props
 
   const handleInputChange = (word) => {
-    const searchProducts = offers.filter((offer) => {
-      return offer.jobTitle.toLowerCase().includes(word.toLowerCase())
+    const searchCompanies = companies.filter((company) => {
+      return company.name.toLowerCase().includes(word.toLowerCase())
     })
-    setFilteredOffers(searchProducts)
+    setFilteredCompanies(searchCompanies)
   }
 
   return (
@@ -26,6 +26,4 @@ const Searchbar = (props) => {
   )
 }
 
-export default Searchbar
-
-
+export default SearchbarCompanies

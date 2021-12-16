@@ -11,7 +11,7 @@ function OffersJobPage() {
 
   useEffect(() => {
     getOffers().then((response) => {
-      console.log(response.data)
+      
       setOffers(response.data.searchOffers);
       setFilteredOffers(response.data.searchOffers)
   });

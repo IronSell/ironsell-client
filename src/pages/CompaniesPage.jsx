@@ -1,26 +1,27 @@
 import '../App.css'
-import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Searchbar from '../components/Searchbar/Searchbar'
+import SearchbarCompanies from '../components/CompaniesSearchbar/CompaniesSearchbar';
 import CardCompanies from '../components/CardCompanies/CardCompanies'
-
+import { getCompanies } from '../services/companies';
 const CompaniesPage = () => {
-  const [companiesList, setCompaniesList] = useState([])
+  const [fileteredCompanies, setFilteredCompanies] = useState([])
+  const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/companies`).then((response) => {
-      // console.log(response.data.searchCompany)
-      setCompaniesList(response.data.searchCompany)
+    getCompanies().then((response) => {
+      
+      setCompanies(response.data.searchCompany)
+      setFilteredCompanies(response.data.searchCompany)
     })
   }, [])
 
   return (
     <div className="container">
       <h1>CompaniesPage</h1>
-      <Searchbar />
+      <SearchbarCompanies setFilteredCompanies={setFilteredCompanies} companies={companies}/>
       <h2>List of Companies</h2>
       <div className="companiesStylesJobPage">
-        {companiesList.map((searchCompany, index) => (
+        {fileteredCompanies?.map((searchCompany, index) => (
           <CardCompanies
           searchCompany={searchCompany}
           key={index + Date.now()} 
