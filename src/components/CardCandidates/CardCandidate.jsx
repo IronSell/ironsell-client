@@ -4,7 +4,7 @@ import './CardCandidate.css'
 
 
 function CardCandidate(props) {
-    const { name, lastName, province, profession, profilePicture, _id } = props.getCandidates;
+    const { name, lastName, province, profession, profilePicture, _id, skills } = props.getCandidates;
     return (
       <div className='cardCandidate'>
         {/* <Link to={PATHS.CANDIDATEPROFILE + '?id=' + _id}> */}
@@ -16,14 +16,18 @@ function CardCandidate(props) {
         <div className="buttons">
             <Link to={PATHS.CANDIDATEPROFILE + '?id=' + _id}>
             <button className="primary">
-                About
+                Profile
             </button>
         </Link>
         </div>
         <div className="skills">
             <h6>Skills</h6>
             <ul>
-                <li>UI / UX</li>
+              {/* {skills.map((skill) => (
+                <li>{skill}</li>
+              ))} */}
+
+                {/* <li>UI / UX</li> */}
                 <li>Front End Development</li>
                 <li>HTML</li>
                 <li>CSS</li>

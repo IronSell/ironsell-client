@@ -64,3 +64,11 @@ margin-bottom: 1rem;
 border: 0;
 border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+
+.flexbox{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}

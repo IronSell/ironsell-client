@@ -1,5 +1,5 @@
 import './CompanyProfile.css';
-import { Image, Typography, Anchor } from 'antd';
+import { Image, Typography, Anchor, Text } from 'antd';
 import { EnvironmentOutlined, MailOutlined } from '@ant-design/icons';
 
 function CompanyView(props) {
@@ -38,10 +38,16 @@ function CompanyView(props) {
               </span>{' '}
               <a href={companyUrl}>{companyUrl}</a>
             </Text>
-            {/* <Anchor className='company-anchor'>
-            <Link href={companyUrl} title={companyUrl}></Link>
-            </Anchor> */}
           </div>
+        </div>
+        <div className='info-container'>
+          <Title level={2}>Published job offers:</Title>
+        </div>
+        <div className='media-container'>
+          <Title level={2}>Published job offers:</Title>
+        </div>
+        <div className='offers-container'>
+          <Title level={2}>Published job offers:</Title>
         </div>
       </div>
     </main>
