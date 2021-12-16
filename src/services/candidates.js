@@ -34,3 +34,10 @@ export function getCandidate(id) {
     .then(successStatus)
     .catch(internalServerError);
 }
+
+export function getCandidates() {
+  return candidatesService
+    .get('/')
+    .then(successStatus)
+    .catch(internalServerError);
+}
