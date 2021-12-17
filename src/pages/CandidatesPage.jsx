@@ -1,13 +1,15 @@
 import '../App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Searchbar from '../components/Searchbar/Searchbar';
+import Candidatessearchbar from '../components/Candidates Searchbar/CandidatesSearchbar';
 import CardCandidate from '../components/CardCandidates/CardCandidate';
 import * as USER_HELPERS from '../utils/userToken';
 
 const CandidatesPage = (props) => {
+  const [fileteredCandidates, setFilteredCandidates] = useState([])
   const [candidatesList, setcandidatesList] = useState([]);
-
+ 
+  
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/candidates`, {
@@ -16,6 +18,7 @@ const CandidatesPage = (props) => {
         },
       })
       .then((response) => {
+        setFilteredCandidates(response.data.getCandidates)
         setcandidatesList(response.data.getCandidates);
       });
   }, []);
@@ -23,9 +26,9 @@ const CandidatesPage = (props) => {
   return (
     <div className='container'>
       <h1>CandidatesPage</h1>
-      <Searchbar />
+      <Candidatessearchbar setFilteredCandidates={setFilteredCandidates} candidatesList={candidatesList}/>
       <div className='flexbox'>
-      {candidatesList.map((getCandidates) => (
+      {fileteredCandidates?.map((getCandidates) => (
         <CardCandidate getCandidates={getCandidates} key={getCandidates._id} />
       ))}
       </div>
