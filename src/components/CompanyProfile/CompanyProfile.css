@@ -17,10 +17,12 @@
   }
 
   .company-logo {
-    width: auto;
-    height: 210px;
-    margin-top: 15px;
+    width: 250px;
+    height: 180px;
+    margin-top: 10px;
     border-radius: 3px;
+    object-fit: contain;
+    padding-bottom: -20px;
   }
 
   .logo-container {
@@ -37,6 +39,7 @@
 
   .info-container {
     margin-top: 20px;
+    padding-top: 20px;
     height: fit-content;
     width: 900px;
     border: 1px solid rgb(238, 238, 238);
@@ -64,6 +67,10 @@
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 8px -5px #000000;
     box-shadow: 0px 0px 8px -5px #000000;
+  }
+
+  .company-description {
+    border-color: transparent !important;
   }
 }
 
