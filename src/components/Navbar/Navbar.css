@@ -5,10 +5,16 @@ nav {
   flex-wrap: wrap;
   background: linear-gradient(
     90deg,
-    rgba(154, 119, 177, 0.8) 0%,
-    rgba(184, 125, 166, 0.8) 81%
+    rgb(154, 119, 177) 0%,
+    rgb(184, 125, 166) 81%
   );
   font-weight: 600;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  -webkit-box-shadow: 0px 10px 13px -13px #000000, 0px 0px 5px 0px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -13px #000000, 0px 0px 5px 0px rgba(0,0,0,0);
 }
 
 .nav__projectName {
