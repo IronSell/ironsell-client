@@ -20,7 +20,7 @@ function Footer() {
       </div>
 
       <div className='columsFooter'>
-        <p>federico Altava Redondo:</p>
+        <p>Federico Altava Redondo:</p>
         <GithubOutlined className='logoGit'/>
         <LinkedinOutlined style={{color:'#1457b6'}}/>
       </div>

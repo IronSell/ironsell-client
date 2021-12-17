@@ -24,8 +24,9 @@ function CardCandidate(props) {
             <h6>Skills</h6>
             <ul>
               {/* {skills.map((skill) => (
-                <li>{skill}</li>
+                // <li>{skill}</li>
               ))} */}
+              
 
                 {/* <li>UI / UX</li> */}
                 <li>Front End Development</li>
