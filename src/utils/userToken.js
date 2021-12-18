@@ -1,4 +1,4 @@
-import * as CONSTS from "./consts";
+import * as CONSTS from './consts';
 
 export function getUserToken() {
   return localStorage.getItem(CONSTS.ACCESS_TOKEN);

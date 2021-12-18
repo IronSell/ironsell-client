@@ -2,16 +2,13 @@ import { List, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import * as PATHS from '../../utils/paths';
 import './CardOffers.css';
-import {
-  CalendarOutlined,
-  EnvironmentOutlined,
-  EuroCircleOutlined,
-} from '@ant-design/icons';
+import { CalendarOutlined, EnvironmentOutlined, EuroCircleOutlined } from '@ant-design/icons';
 
 function CardOffer(props) {
   const { searchOffers } = props;
   const data = [searchOffers];
   const date = new Date(searchOffers.createdAt);
+
   return (
     <div className='ant-card-hoverable '>
       <Link to={PATHS.OFFERPAGE + '?id=' + searchOffers._id}>

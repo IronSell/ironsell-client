@@ -1,6 +1,5 @@
 import './CompanyProfile.css';
 import { Image, Typography, Anchor, Text, Descriptions, Collapse } from 'antd';
-import { EnvironmentOutlined, MailOutlined } from '@ant-design/icons';
 
 function CompanyView(props) {
   const {
@@ -27,8 +26,7 @@ function CompanyView(props) {
         <div className='company-logo-container'>
           <img className='company-logo' src={companyLogo} alt={name} />
           <h3>{name}</h3>
-          <div className='logo-container'>
-          </div>
+          <div className='logo-container'></div>
         </div>
         <div className='info-container'>
           <Descriptions

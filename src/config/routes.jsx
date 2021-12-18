@@ -11,7 +11,7 @@ import CompanyPage from '../pages/CompanyPage';
 import CompanyProfile from '../pages/CompanyProfile/CompanyProfile';
 import OfferPage from '../pages/OfferPage';
 import CandidatesPage from '../pages/CandidatesPage';
-import CandidateProfile from '../pages/CandidateProfile'
+import CandidateProfile from '../pages/CandidateProfile';
 
 const routes = (props) => {
   const { user } = props;

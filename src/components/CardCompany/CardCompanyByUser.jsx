@@ -1,6 +1,6 @@
 import { Card, Avatar } from 'antd';
-import { Link } from "react-router-dom";
-import * as PATHS from "../../utils/paths";
+import { Link } from 'react-router-dom';
+import * as PATHS from '../../utils/paths';
 
 const { Meta } = Card;
 
@@ -42,4 +42,3 @@ function CardCompanyByUser(props) {
 }
 
 export default CardCompanyByUser;
-

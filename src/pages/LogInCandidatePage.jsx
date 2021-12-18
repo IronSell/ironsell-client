@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { login } from '../services/auth';
 import { useNavigate, Link } from 'react-router-dom';
-import * as PATHS from '../utils/paths';
-import * as USER_HELPERS from '../utils/userToken';
 import { Button, Input, Alert } from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
+import * as PATHS from '../utils/paths';
+import * as USER_HELPERS from '../utils/userToken';
 
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
@@ -17,7 +17,6 @@ export default function LogIn({ authenticate }) {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-
     return setForm({ ...form, [name]: value });
   }
 
@@ -70,7 +69,7 @@ export default function LogIn({ authenticate }) {
 
         {error && (
           <div className='error-msg'>
-            <Alert message="Wrog credentials" type="error" showIcon />
+            <Alert message='Wrog credentials' type='error' showIcon />
           </div>
         )}
 

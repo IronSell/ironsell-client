@@ -20,10 +20,9 @@ function successStatus(res) {
   };
 }
 
-// creates a basic url for every request in this file
 const companiesService = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}/companies`,
-}); // --> http://localhost:5005/api/companies
+});
 
 export function getCompany(id) {
   return companiesService
@@ -33,8 +32,5 @@ export function getCompany(id) {
 }
 
 export function getCompanies() {
-  return companiesService
-    .get()
-    .then(successStatus)
-    .catch(internalServerError);
+  return companiesService.get().then(successStatus).catch(internalServerError);
 }

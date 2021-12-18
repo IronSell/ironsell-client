@@ -8,16 +8,19 @@ const CompanyProfile = (props) => {
   const { authenticate, user } = props;
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/companies/profile/${user._id}`, {
-        headers: {
-          Authorization: USER_HELPERS.getUserToken(),
-        },
-      })
+      .get(
+        `${process.env.REACT_APP_SERVER_URL}/companies/profile/${user._id}`,
+        {
+          headers: {
+            Authorization: USER_HELPERS.getUserToken(),
+          },
+        }
+      )
       .then((response) => {
         authenticate(response.data.showCompany);
       });
   }, []);
-  console.log(user)
+  console.log(user);
   return (
     <div>
       <CompanyView user={user} />
