@@ -28,11 +28,11 @@ const OfferPage = () => {
           <div className="col-md-8">
             <div className="card-block">
               <h1 className="card-title">{offer.jobTitle}</h1>
+              <p className="card-text text-justify">{offer.province}</p>
+              <p className="card-text text-justify">{offer.schedule}</p>
               <p className="card-text text-justify">{offer.salary}</p>
               <p className="card-text text-justify">{offer.experienceYears}</p>
-              <p className="card-text text-justify">{offer.province}</p>
-              <p className="card-text text-justify">{offer.requirements}</p>
-              <p className="card-text text-justify">{offer.schedule}</p>
+              <p className="card-text text-justify">{offer.requeriments}</p>
               <p className="card-text text-justify">{offer.description}</p>
               <a href="https://www.google.com" className="btn btn-primary">apply</a>
             </div>
