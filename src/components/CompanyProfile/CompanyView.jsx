@@ -74,7 +74,8 @@ function CompanyView(props) {
           </Text>
           <Divider />
           <Text>
-            <FacebookOutlined />quimiromar
+            <FacebookOutlined />
+            quimiromar
           </Text>
           <Divider />
           <Text>
@@ -83,6 +84,7 @@ function CompanyView(props) {
         </div>
         <div className='offers-container'>
           <Title level={3}>Active job vacancies</Title>
+          {jobOffers}
         </div>
       </div>
     </main>
