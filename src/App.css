@@ -5,8 +5,9 @@
   padding-bottom: 70px;
 }
 
-.container {
-  padding-top: 65px;
+.container h1 {
+  padding-top: 70px;
+  margin-bottom: .3em;
 }
 
 .companiesStylesJobPage {
