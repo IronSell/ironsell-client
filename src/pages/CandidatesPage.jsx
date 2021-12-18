@@ -3,18 +3,23 @@ import { useState, useEffect } from 'react';
 import CandidatesSearchbar from '../components/Candidates Searchbar/CandidatesSearchbar';
 import CardCandidate from '../components/CardCandidates/CardCandidate';
 import { getCandidates } from '../services/candidates';
+import { getHome } from '../services/home';
 
 const CandidatesPage = (props) => {
+  const { user } = props;
+
   const [fileteredCandidates, setFilteredCandidates] = useState([]);
   const [candidatesList, setCandidatesList] = useState([]);
 
   useEffect(() => {
-    getCandidates().then((response) => {
-      console.log(response)
-      setCandidatesList(response.data.getCandidates);
-      setFilteredCandidates(response.data.getCandidates);
-    });
-  }, []);
+    user
+      ? getCandidates().then((response) => {
+          console.log(response);
+          setCandidatesList(response.data.getCandidates);
+          setFilteredCandidates(response.data.getCandidates);
+        })
+      : getHome();
+  }, [user]);
 
   return (
     <div className='container'>

@@ -13,11 +13,8 @@ const Navbar = (props) => {
 
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  console.log(user)
-
   return (
     <nav className={`Navbar ${theme}`}>
-      {/*  <nav > */}
       <Link to={PATHS.HOMEPAGE} className='nav__projectName'>
         IronJob
       </Link>
@@ -27,15 +24,14 @@ const Navbar = (props) => {
       <Link to={PATHS.COMPANIESPAGE} className='OfferAndCompanyColor'>
         Companies
       </Link>
-      <Link to={PATHS.CANDIDATESPAGE} className='OfferAndCompanyColor'>
-        Candidates
-      </Link>
-
       <div className='nav__authLinks'>
         {user ? (
           <>
             {user.isCompany ? (
               <>
+              <Link to={PATHS.CANDIDATESPAGE} className='OfferAndCompanyColor'>
+                Candidates
+              </Link>
               <Link to={PATHS.COMPANYPROFILE} className='OfferAndCompanyColor'>
                 {user.name}
               </Link>
