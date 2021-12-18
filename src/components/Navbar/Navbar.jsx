@@ -9,9 +9,11 @@ import { ThemeContext } from './../../context/theme.context';
 // import * as CONSTS from "../../utils/consts";
 
 const Navbar = (props) => {
-  const { user, handleLogout } = props;
+  const { user, handleLogout, handleLogoutCompany } = props;
 
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  console.log(user)
 
   return (
     <nav className={`Navbar ${theme}`}>
@@ -33,20 +35,24 @@ const Navbar = (props) => {
         {user ? (
           <>
             {user.isCompany ? (
+              <>
               <Link to={PATHS.COMPANYPROFILE} className='OfferAndCompanyColor'>
                 {user.name}
               </Link>
+              <Button type='primary' onClick={handleLogoutCompany}>
+                Logout
+              </Button>
+              </>
             ) : (
+              <>
               <Link to={PATHS.USERPROFILE} className='authLink'>
                 {user.name} {user.lastName}
               </Link>
+              <Button type='primary' onClick={handleLogout}>
+                Logout
+              </Button>
+              </>
             )}
-            <Button type='primary' onClick={handleLogout}>
-              Logout
-            </Button>
-            {/* <button className='nav-logoutbtn' onClick={handleLogout}>
-              Logout
-            </button> */}
           </>
         ) : (
           <>

@@ -53,6 +53,18 @@ export function getLoggedIn() {
     .catch(internalServerError);
 }
 
+// Prueba session company
+export function getCompanyLoggedIn() {
+  return authService
+    .get(`session-company`, {
+      headers: {
+        Authorization: USER_HELPERS.getUserToken(),
+      },
+    })
+    .then(successStatus)
+    .catch(internalServerError);
+}
+
 export function signup(credentials) {
   return authService
     .post('/signup/user', credentials)
@@ -63,6 +75,17 @@ export function signup(credentials) {
 export function logout() {
   return authService
     .delete('/logout', {
+      headers: {
+        Authorization: USER_HELPERS.getUserToken(),
+      },
+    })
+    .then(successStatus)
+    .catch(internalServerError);
+}
+
+export function logoutCompany() {
+  return authService
+    .delete('/logout/company', {
       headers: {
         Authorization: USER_HELPERS.getUserToken(),
       },

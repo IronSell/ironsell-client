@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LoadingComponent from './components/Loading';
 import Navbar from './components/Navbar/Navbar';
-import { getLoggedIn, logout } from './services/auth';
+import {
+  getLoggedIn,
+  logout,
+  getCompanyLoggedIn,
+  logoutCompany,
+} from './services/auth';
 import routes from './config/routes';
 import * as USER_HELPERS from './utils/userToken';
 import Footer from './components/Footer/Footer';
@@ -20,6 +25,22 @@ export default function App() {
       if (!res.status) {
         return setIsLoading(false);
       }
+      console.log(res.data);
+      setUser(res.data.user);
+      setIsLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    const accessToken = USER_HELPERS.getUserToken();
+    if (!accessToken) {
+      return setIsLoading(false);
+    }
+    getCompanyLoggedIn(accessToken).then((res) => {
+      if (!res.status) {
+        return setIsLoading(false);
+      }
+      console.log(res.data);
       setUser(res.data.user);
       setIsLoading(false);
     });
@@ -43,6 +64,24 @@ export default function App() {
     });
   }
 
+  function handleLogoutCompany() {
+    const accessToken = USER_HELPERS.getUserToken();
+    if (!accessToken) {
+      setUser(null);
+      return setIsLoading(false);
+    }
+    setIsLoading(true);
+    logoutCompany(accessToken).then((res) => {
+      if (!res.status) {
+        // deal with error here
+        console.error('Logout was unsuccessful: ', res);
+      }
+      USER_HELPERS.removeUserToken();
+      setIsLoading(false);
+      return setUser(null);
+    });
+  }
+
   function authenticate(user) {
     setUser(user);
   }
@@ -52,7 +91,11 @@ export default function App() {
   }
   return (
     <div className='App'>
-      <Navbar handleLogout={handleLogout} user={user} />
+      <Navbar
+        handleLogout={handleLogout}
+        user={user}
+        handleLogoutCompany={handleLogoutCompany}
+      />
 
       <Routes>
         {routes({ user, authenticate, handleLogout }).map((route) => (
