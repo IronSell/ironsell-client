@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import LoadingComponent from './components/Loading';
 import Navbar from './components/Navbar/Navbar';
 import {
@@ -9,12 +9,15 @@ import {
   logoutCompany,
 } from './services/auth';
 import routes from './config/routes';
+import * as PATHS from './utils/paths';
 import * as USER_HELPERS from './utils/userToken';
 import Footer from './components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const accessToken = USER_HELPERS.getUserToken();
@@ -58,6 +61,7 @@ export default function App() {
         // deal with error here
         console.error('Logout was unsuccessful: ', res);
       }
+      navigate(PATHS.HOMEPAGE);
       USER_HELPERS.removeUserToken();
       setIsLoading(false);
       return setUser(null);
@@ -76,6 +80,7 @@ export default function App() {
         // deal with error here
         console.error('Logout was unsuccessful: ', res);
       }
+      navigate(PATHS.HOMEPAGE);
       USER_HELPERS.removeUserToken();
       setIsLoading(false);
       return setUser(null);

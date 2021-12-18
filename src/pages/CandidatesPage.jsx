@@ -1,24 +1,26 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CandidatesSearchbar from '../components/Candidates Searchbar/CandidatesSearchbar';
 import CardCandidate from '../components/CardCandidates/CardCandidate';
 import { getCandidates } from '../services/candidates';
-import { getHome } from '../services/home';
+import * as PATHS from '../utils/paths';
 
 const CandidatesPage = (props) => {
   const { user } = props;
 
+  const navigate = useNavigate();
   const [fileteredCandidates, setFilteredCandidates] = useState([]);
   const [candidatesList, setCandidatesList] = useState([]);
 
   useEffect(() => {
-    user
-      ? getCandidates().then((response) => {
+    !user
+      ? navigate(PATHS.LOGINCOMPANYPAGE)
+      : getCandidates().then((response) => {
           setCandidatesList(response.data.getCandidates);
           setFilteredCandidates(response.data.getCandidates);
-        })
-      : getHome();
-  }, [user]);
+        });
+  }, [navigate, user]);
 
   return (
     <div className='container'>
