@@ -14,7 +14,6 @@ const CandidatesPage = (props) => {
   useEffect(() => {
     user
       ? getCandidates().then((response) => {
-          console.log(response);
           setCandidatesList(response.data.getCandidates);
           setFilteredCandidates(response.data.getCandidates);
         })
