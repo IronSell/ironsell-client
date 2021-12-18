@@ -8,10 +8,10 @@ import Signup from '../pages/Signup';
 import * as PATHS from '../utils/paths';
 import OffersJobPage from '../pages/OffersJobPage';
 import CompanyPage from '../pages/CompanyPage';
-import CompanyProfile from '../pages/CompanyProfile';
+import CompanyProfile from '../pages/CompanyProfile/CompanyProfile';
 import OfferPage from '../pages/OfferPage';
 import CandidatesPage from '../pages/CandidatesPage';
-import CandidateProfile from '../pages/CandidateProfile'
+import CandidateProfile from '../pages/CandidateProfile';
 
 const routes = (props) => {
   const { user } = props;

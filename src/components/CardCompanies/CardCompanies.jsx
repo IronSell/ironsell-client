@@ -1,6 +1,8 @@
+import './CardCompanies.css'
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import * as PATHS from '../../utils/paths';
+
 
 function CardCompanies(props) {
   const { companyLogo, name, province, companyUrl, _id } = props.searchCompany;

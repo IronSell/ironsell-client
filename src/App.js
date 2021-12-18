@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import LoadingComponent from "./components/Loading";
-import Navbar from "./components/Navbar/Navbar";
-import { getLoggedIn, logout } from "./services/auth";
-import routes from "./config/routes";
-import * as USER_HELPERS from "./utils/userToken";
-import Footer from "./components/Footer/Footer";
-
+import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LoadingComponent from './components/Loading';
+import Navbar from './components/Navbar/Navbar';
+import { getLoggedIn, logout } from './services/auth';
+import routes from './config/routes';
+import * as USER_HELPERS from './utils/userToken';
+import Footer from './components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -36,7 +35,7 @@ export default function App() {
     logout(accessToken).then((res) => {
       if (!res.status) {
         // deal with error here
-        console.error("Logout was unsuccessful: ", res);
+        console.error('Logout was unsuccessful: ', res);
       }
       USER_HELPERS.removeUserToken();
       setIsLoading(false);
@@ -52,15 +51,15 @@ export default function App() {
     return <LoadingComponent />;
   }
   return (
-    <div className="App">
+    <div className='App'>
       <Navbar handleLogout={handleLogout} user={user} />
-      
+
       <Routes>
         {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

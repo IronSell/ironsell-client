@@ -5,6 +5,7 @@ import * as USER_HELPERS from '../utils/userToken';
 
 const UserProfile = (props) => {
   const { authenticate, user } = props;
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5005/api/users/profile/${user._id}`, {

@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 function internalServerError(err) {
   if (err.response && err.response.data && err.response.data.errorMessage) {
     return {
@@ -23,8 +22,7 @@ function successStatus(res) {
 
 const candidatesService = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}/candidates`,
-}); // --> http://localhost:5005/api/candidates
-// creates a basic url for every request in this file
+});
 
 // GET candidate profile
 export function getCandidate(id) {
