@@ -1,3 +1,7 @@
+.CompanyView {
+      padding-top: 70px;
+}
+
 @media (min-width: 992px) {
   .CompanyView {
     display: flex;
@@ -8,7 +12,7 @@
   .company-logo-container {
     margin-top: 20px;
     margin-right: 20px;
-    height: fit-content;
+    height: 280px;
     width: 340px;
     border: 1px solid rgb(238, 238, 238);
     border-radius: 5px;
@@ -38,14 +42,19 @@
   }
 
   .info-container {
+    text-align: left;
     margin-top: 20px;
     padding-top: 20px;
-    height: fit-content;
+    height: max-content;
     width: 900px;
     border: 1px solid rgb(238, 238, 238);
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 8px -5px #000000;
     box-shadow: 0px 0px 8px -5px #000000;
+  }
+
+  .info-container .ant-descriptions-title {
+    text-align: center;
   }
 
   .media-container {
@@ -71,6 +80,11 @@
 
   .company-description {
     border-color: transparent !important;
+  }
+
+  .company-description p {
+    word-spacing: .5px;
+    text-align: justify;
   }
 }
 
