@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as USER_HELPERS from '../utils/userToken';
 
 function internalServerError(err) {
   if (err.response && err.response.data && err.response.data.errorMessage) {
@@ -34,7 +35,11 @@ export function getCandidate(id) {
 
 export function getCandidates() {
   return candidatesService
-    .get('/')
+    .get('/', {
+      headers: {
+        Authorization: USER_HELPERS.getUserToken(),
+      },
+    })
     .then(successStatus)
     .catch(internalServerError);
 }

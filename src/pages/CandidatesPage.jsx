@@ -1,31 +1,25 @@
 import '../App.css';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Candidatessearchbar from '../components/Candidates Searchbar/CandidatesSearchbar';
+import CandidatesSearchbar from '../components/Candidates Searchbar/CandidatesSearchbar';
 import CardCandidate from '../components/CardCandidates/CardCandidate';
-import * as USER_HELPERS from '../utils/userToken';
+import { getCandidates } from '../services/candidates';
 
 const CandidatesPage = (props) => {
   const [fileteredCandidates, setFilteredCandidates] = useState([]);
-  const [candidatesList, setcandidatesList] = useState([]);
+  const [candidatesList, setCandidatesList] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/candidates`, {
-        headers: {
-          Authorization: USER_HELPERS.getUserToken(),
-        },
-      })
-      .then((response) => {
-        setFilteredCandidates(response.data.getCandidates);
-        setcandidatesList(response.data.getCandidates);
-      });
+    getCandidates().then((response) => {
+      console.log(response)
+      setCandidatesList(response.data.getCandidates);
+      setFilteredCandidates(response.data.getCandidates);
+    });
   }, []);
 
   return (
     <div className='container'>
       <h1>CandidatesPage</h1>
-      <Candidatessearchbar
+      <CandidatesSearchbar
         setFilteredCandidates={setFilteredCandidates}
         candidatesList={candidatesList}
       />
