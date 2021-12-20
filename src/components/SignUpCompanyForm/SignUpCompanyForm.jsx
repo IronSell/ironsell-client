@@ -87,16 +87,17 @@ const SignUpForm = () => {
               required={true}
             />
             <p className='password-instructions'>
-              It must container at least 8 characters, numbers, lowercase and
+              It must contain at least 8 characters, numbers, lowercase and
               uppercase letters.{' '}
             </p>
           </div>
           <p className='form-titles'>Your company data</p>
           <hr />
           <div className='form-input'>
+          <p className='form-input-title'>Company name</p>
             <Input
               id='input-name'
-              type='name'
+              type='text'
               name='name'
               placeholder='Company name'
               value={name}
@@ -104,10 +105,11 @@ const SignUpForm = () => {
               required
             />
           </div>
+          <p className='form-input-title'>CIF</p>
           <div className='form-input'>
             <Input
               id='input-cif'
-              type='cif'
+              type='text'
               name='cif'
               placeholder='C.I.F'
               value={cif}
@@ -116,10 +118,11 @@ const SignUpForm = () => {
               minLength={9}
             />
           </div>
+          <p className='form-input-title'>Professional Sector</p>
           <div className='form-input'>
             <Input
               id='input-professionalSector'
-              type='professionalSector'
+              type='text'
               name='professionalSector'
               placeholder='Professional Sector'
               value={professionalSector}
@@ -127,21 +130,23 @@ const SignUpForm = () => {
               required
             />
           </div>
+          <p className='form-input-title'>Address</p>
           <div className='form-input'>
             <Input
               id='input-address'
-              type='address'
-              name='addres'
+              type='text'
+              name='address'
               placeholder='Company Address'
               value={address}
               onChange={handleInputChange}
               required
             />
           </div>
+          <p className='form-input-title'>Province</p>
           <div className='form-input'>
             <Input
               id='input-province'
-              type='province'
+              type='text'
               name='province'
               placeholder='Province'
               value={province}
@@ -149,10 +154,11 @@ const SignUpForm = () => {
               required
             />
           </div>
+          <p className='form-input-title'>Website</p>
           <div className='form-input'>
             <Input
               id='input-companyUrl'
-              type='companyUrl'
+              type='url'
               name='companyUrl'
               placeholder='Company website'
               value={companyUrl}
@@ -160,6 +166,9 @@ const SignUpForm = () => {
               required
             />
           </div>
+          <Button type='primary' htmlType='submit'>
+            Create Account
+          </Button>
           <p className='form-titles-centered'>Then you can publish your first offer!</p>
         </form>
       </div>
