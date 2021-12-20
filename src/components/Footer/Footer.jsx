@@ -7,18 +7,18 @@ function Footer() {
     <div className='footer'>
       <div className='columsFooter'>
         <p>Rocio Garcia:</p>
-        <GithubOutlined className='logoGit' />
-        <LinkedinOutlined style={{ color: '#1457b6' }} />
+        <a href="https://github.com/Roxonwheels"><GithubOutlined className='logoGit' /></a>
+        <a href="https://www.linkedin.com/in/maria-del-rocio-garcia-16a508193/"><LinkedinOutlined style={{ color: '#1457b6' }} /></a>
       </div>
       <div className='columsFooter'>
         <p>Nacho Benito:</p>
-        <GithubOutlined className='logoGit' />
-        <LinkedinOutlined style={{ color: '#1457b6' }} />
+        <a href="https://github.com/nachbr91"><GithubOutlined className='logoGit' /></a>
+        <a href="https://www.linkedin.com/in/nachobenitoroig/"><LinkedinOutlined style={{ color: '#1457b6' }} /></a>
       </div>
       <div className='columsFooter'>
         <p>Federico Altava Redondo:</p>
-        <GithubOutlined className='logoGit' />
-        <LinkedinOutlined style={{ color: '#1457b6' }} />
+        <a href="https://github.com/FedeAltava"><GithubOutlined className='logoGit' /></a>
+        <a href="https://www.linkedin.com/in/federico-altava-redondo-a59390199/"><LinkedinOutlined style={{ color: '#1457b6' }} /></a>
       </div>
     </div>
   );

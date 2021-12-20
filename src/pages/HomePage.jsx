@@ -6,7 +6,6 @@ function HomePage() {
     <main className='App'>
       <div className='container'>
         <h1>Home Page</h1>
-        <Searchbar />
       </div>
     </main>
   );
