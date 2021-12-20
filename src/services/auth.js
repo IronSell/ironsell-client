@@ -84,6 +84,13 @@ export function logout() {
     .catch(internalServerError);
 }
 
+export function signupCompany (crendentials) {
+  return authService
+    .post ('/signup/company', crendentials)
+    .then(successStatus)
+    .catch(internalServerError);
+}
+
 export function logoutCompany() {
   return authService
     .delete('/logout/company', {

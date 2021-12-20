@@ -4,7 +4,8 @@ import LoginCandidatePage from '../pages/LogInCandidatePage';
 import LoginCompanyPage from '../pages/LoginCompanyPage';
 import UserProfile from '../pages/UserProfile';
 import CompaniesPage from '../pages/CompaniesPage';
-import Signup from '../pages/Signup';
+import SignupCandidate from '../pages/SignUpCandidatePage/SignupCandidatePage';
+import SignupCompany from '../pages/SignUpCompanyPage/SignupCompanyPage';
 import OffersJobPage from '../pages/OffersJobPage';
 import CompanyPage from '../pages/CompanyPage';
 import CompanyProfile from '../pages/CompanyProfile/CompanyProfile';
@@ -54,11 +55,11 @@ const routes = (props) => {
     },
     {
       path: PATHS.SIGNUPCANDIDATEPAGE,
-      element: <Signup {...props} />,
+      element: <SignupCandidate {...props} />,
     },
     {
       path: PATHS.SIGNUPCOMPANYPAGE,
-      element: <Signup {...props} />,
+      element: <SignupCompany {...props} />,
     },
     {
       path: PATHS.LOGINCANDIDATEPAGE,
