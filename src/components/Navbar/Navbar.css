@@ -1,8 +1,4 @@
 nav {
-  display: flex;
-  padding: 1em;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   background: linear-gradient(
     90deg,
     rgb(154, 119, 177) 0%,
@@ -16,6 +12,26 @@ nav {
   -webkit-box-shadow: 0px 10px 13px -13px #000000,
     0px 0px 5px 0px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -13px #000000, 0px 0px 5px 0px rgba(0, 0, 0, 0);
+}
+
+ul .links {
+  display: flex;
+}
+
+ul .access-buttons {
+  display: flex;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+nav li {
+  padding-left: 30px;
 }
 
 .nav__projectName {
