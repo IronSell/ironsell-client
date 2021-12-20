@@ -1,9 +1,13 @@
+h1 {
+  padding-top: 70px;
+}
+
 form.auth__form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -16,8 +20,7 @@ button.button__submit {
   margin: 5% 0 4% 0;
 }
 
-.email {
-  margin-top: 30%;
+.form-input {
   margin-bottom: 5%;
 }
 

@@ -41,7 +41,7 @@ export default function LogIn({ authenticate }) {
     <div className='container'>
       <h1>Access as a Company</h1>
       <form onSubmit={handleFormSubmission} className='auth__form'>
-        <div className='email'>
+        <div className='form-input'>
           <Input
             prefix={<MailOutlined className='site-form-item-icon' />}
             id='input-email'
@@ -54,7 +54,7 @@ export default function LogIn({ authenticate }) {
           />
         </div>
 
-        <div className='password'>
+        <div className='form-input'>
           <Input.Password
             prefix={<LockOutlined className='site-form-item-icon' />}
             id='input-password'

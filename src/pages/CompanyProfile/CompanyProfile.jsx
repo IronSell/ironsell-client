@@ -19,8 +19,7 @@ const CompanyProfile = (props) => {
       .then((response) => {
         authenticate(response.data.showCompany);
       });
-  }, []);
-  console.log(user);
+  }, [authenticate, user._id]);
   return (
     <div>
       <CompanyView user={user} />
