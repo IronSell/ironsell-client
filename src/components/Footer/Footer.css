@@ -32,3 +32,7 @@
   margin-top: 0;
   fill: currentcolor;
 }
+.columsFooter a {
+  text-decoration: none;
+  color: initial;
+}
