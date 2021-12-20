@@ -30,21 +30,8 @@ p {
   padding-top: 30px;
   position: relative;
   width: 280px;
-  /* height: 350px; */
   max-width: 100%;
   text-align: center;
-}
-
-.card-container .pro {
-  color: #231e39;
-  background-color: #febb0b;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 3px 7px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
 }
 
 .card-container .round {

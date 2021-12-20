@@ -10,9 +10,7 @@ function CardCandidate(props) {
       {/* <Link to={PATHS.CANDIDATEPROFILE + '?id=' + _id}> */}
       <div className='card-container'>
         <img className='round' src={profilePicture} alt='user' />
-        <h3>
-          {name} {lastName}
-        </h3>
+        <h3>{name} {lastName}</h3>
         <h6>{province}</h6>
         <p>{profession}</p>
         <div className='buttons'>
@@ -26,8 +24,6 @@ function CardCandidate(props) {
             {/* {skills.map((skill) => (
                 // <li>{skill}</li>
               ))} */}
-
-            {/* <li>UI / UX</li> */}
             <li>Front End Development</li>
             <li>HTML</li>
             <li>CSS</li>
