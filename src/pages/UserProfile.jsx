@@ -14,10 +14,9 @@ const UserProfile = (props) => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         authenticate(response.data.showUser);
       });
-  }, []);
+  }, [authenticate, user._id]);
 
   return (
     <div>
