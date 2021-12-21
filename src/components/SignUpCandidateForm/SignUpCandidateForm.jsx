@@ -1,32 +1,34 @@
-import './SignUpCompanyForm.styles.css';
+import './SignUpCandidate.styles.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signupCompany } from '../../services/auth';
+import { signup } from '../../services/auth';
 import * as PATHS from '../../utils/paths';
-import { Input, Button } from 'antd';
+import { Input, DatePicker, Button } from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
+import locale from 'antd/es/date-picker/locale/es_ES';
+import 'moment/locale/es';
 
-const SignUpForm = () => {
+const SignUpCandidateForm = () => {
   const [form, setForm] = useState({
     name: '',
+    lastName: '',
     email: '',
     password: '',
-    professionalSector: '',
-    cif: '',
-    address: '',
+    birth: '',
+    telephoneNumber: '',
     province: '',
-    companyUrl: '',
+    postalCode: '',
   });
 
   const {
     name,
+    lastName,
     email,
     password,
-    professionalSector,
-    cif,
-    address,
+    birth,
+    telephoneNumber,
     province,
-    companyUrl,
+    postalCode,
   } = form;
 
   const [error, setError] = useState(null);
@@ -39,21 +41,21 @@ const SignUpForm = () => {
 
   function handleFormSubmission(e) {
     e.preventDefault();
-    const companyAccount = {
+    const candidateAccount = {
       name,
+      lastName,
       email,
       password,
-      professionalSector,
-      cif,
-      address,
+      birth,
+      telephoneNumber,
       province,
-      companyUrl,
+      postalCode,
     };
-    signupCompany(companyAccount).then((res) => {
+    signup(candidateAccount).then((res) => {
       if (!res.status) {
         return setError({ message: 'There was an error creating the account' });
       }
-      navigate(PATHS.LOGINCOMPANYPAGE);
+      navigate(PATHS.LOGINCANDIDATEPAGE);
     });
   }
 
@@ -91,55 +93,68 @@ const SignUpForm = () => {
               lowercase and uppercase letters.{' '}
             </p>
           </div>
-          <p className='form-titles'>Your company data</p>
+          <p className='form-titles'>Your personal data</p>
           <hr />
           <div className='form-input'>
-            <p className='form-input-title'>Company name</p>
+            <p className='form-input-title'>Name</p>
             <Input
               id='input-name'
               type='text'
               name='name'
-              placeholder='Company name'
+              placeholder='Name'
               value={name}
               onChange={handleInputChange}
               required
             />
           </div>
-          <p className='form-input-title'>CIF</p>
+          <div className='form-input'>
+            <p className='form-input-title'>Last name</p>
+              <Input
+                id='input-lastName'
+                type='text'
+                name='lastName'
+                placeholder='Last name'
+                value={lastName}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          <p className='form-input-title'>Date of birth</p>
           <div className='form-input'>
             <Input
-              id='input-cif'
-              type='text'
-              name='cif'
-              placeholder='C.I.F'
-              value={cif}
+              id='input-birth'
+              type='date'
+              name='birth'
+              placeholder='Date of birth'
+              value={birth}
               onChange={handleInputChange}
               required={true}
-              minLength={9}
             />
           </div>
-          <p className='form-input-title'>Professional Sector</p>
+          <p className='form-input-title'>Telephone number</p>
           <div className='form-input'>
             <Input
-              id='input-professionalSector'
-              type='text'
-              name='professionalSector'
-              placeholder='Professional Sector'
-              value={professionalSector}
+              id='input-telephoneNumber'
+              type='tel'
+              name='telephoneNumber'
+              placeholder='Telephone Number'
+              value={telephoneNumber}
               onChange={handleInputChange}
-              required
+              required={true}
+              maxLength={9}
             />
           </div>
-          <p className='form-input-title'>Address</p>
+          <p className='form-input-title'>Postal Code</p>
           <div className='form-input'>
             <Input
-              id='input-address'
+              id='input-postalCode'
               type='text'
-              name='address'
-              placeholder='Company Address'
-              value={address}
+              name='postalCode'
+              placeholder='Postal Code'
+              value={postalCode}
               onChange={handleInputChange}
-              required
+              required={true}
+              maxLength={5}
             />
           </div>
           <p className='form-input-title'>Province</p>
@@ -151,31 +166,13 @@ const SignUpForm = () => {
               placeholder='Province'
               value={province}
               onChange={handleInputChange}
-              required
+              required={true}
             />
           </div>
-          <p className='form-input-title'>Website</p>
-          <div className='form-input'>
-            <Input
-              id='input-companyUrl'
-              type='url'
-              name='companyUrl'
-              placeholder='Company website'
-              value={companyUrl}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <Button type='primary' htmlType='submit'>
-            Create Account
-          </Button>
-          <p className='form-titles-centered'>
-            Then you can publish your first offer!
-          </p>
         </form>
       </div>
     </>
   );
 };
 
-export default SignUpForm;
+export default SignUpCandidateForm;

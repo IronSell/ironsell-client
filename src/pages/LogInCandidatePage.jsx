@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './auth.css';
 import { login } from '../services/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button, Input, Alert } from 'antd';
@@ -37,7 +38,7 @@ export default function LogIn({ authenticate }) {
   }
 
   return (
-    <div className='container'>
+    <div className='container login-form'>
       <h1>Access as a Candidate</h1>
       <form onSubmit={handleFormSubmission} className='auth__form'>
         <div className='form-input'>

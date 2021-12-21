@@ -2,6 +2,10 @@
   padding-top: 70px;
 }
 
+.container hr {
+  margin-bottom: 10px;
+}
+
 .form-titles {
   font-size: 1.2rem;
   font-weight: bold;
