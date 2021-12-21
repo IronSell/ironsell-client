@@ -170,7 +170,7 @@ const SignUpForm = () => {
             Create Account
           </Button>
           <p className='form-titles-centered'>
-            Then you can publish your first offer!
+            Then you can publish your first job offer!
           </p>
         </form>
       </div>

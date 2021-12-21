@@ -3,10 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signup } from '../../services/auth';
 import * as PATHS from '../../utils/paths';
-import { Input, DatePicker, Button } from 'antd';
+import { Input, Button } from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
-import locale from 'antd/es/date-picker/locale/es_ES';
-import 'moment/locale/es';
 
 const SignUpCandidateForm = () => {
   const [form, setForm] = useState({
@@ -109,16 +107,16 @@ const SignUpCandidateForm = () => {
           </div>
           <div className='form-input'>
             <p className='form-input-title'>Last name</p>
-              <Input
-                id='input-lastName'
-                type='text'
-                name='lastName'
-                placeholder='Last name'
-                value={lastName}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
+            <Input
+              id='input-lastName'
+              type='text'
+              name='lastName'
+              placeholder='Last name'
+              value={lastName}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
           <p className='form-input-title'>Date of birth</p>
           <div className='form-input'>
             <Input
@@ -169,6 +167,12 @@ const SignUpCandidateForm = () => {
               required={true}
             />
           </div>
+          <Button type='primary' htmlType='submit'>
+            Create Account
+          </Button>
+          <p className='form-titles-centered'>
+            After that you can start looking for your desired job!
+          </p>
         </form>
       </div>
     </>
