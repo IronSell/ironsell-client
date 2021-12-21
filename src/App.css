@@ -82,3 +82,30 @@ hr {
   flex-wrap: wrap;
   padding-bottom: 70px;
 }
+.color-description-offer{
+  color: #76cacc;
+  font-weight: bold;
+
+}
+.border-color{
+  border: 2.5px rgb(238, 238, 238) solid;
+  box-shadow: 0px 0px 11px -3px #000000;
+}
+.ApllyButton{
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:5px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#76cacc;
+  text-align:center;
+  transition: all 0.2s;;
+}
+.ApllyButton:hover{
+  background-color:#6ac640;
+
+}
