@@ -110,3 +110,9 @@ hr {
   background-color:#6ac640;
 
 }
+.companiesHomePage{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}
