@@ -1,10 +1,10 @@
 import './SignUpCompanyForm.styles.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signupCompany } from '../../services/auth';
 import * as PATHS from '../../utils/paths';
 import { Input, Button } from 'antd';
-import { LockOutlined, MailOutlined, ShopOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
 const SignUpForm = () => {
   const [form, setForm] = useState({
@@ -87,14 +87,14 @@ const SignUpForm = () => {
               required={true}
             />
             <p className='password-instructions'>
-              It must contain at least 8 characters, numbers, lowercase and
-              uppercase letters.{' '}
+              Your password must be a combination of at least 8 numbers,
+              lowercase and uppercase letters.{' '}
             </p>
           </div>
           <p className='form-titles'>Your company data</p>
           <hr />
           <div className='form-input'>
-          <p className='form-input-title'>Company name</p>
+            <p className='form-input-title'>Company name</p>
             <Input
               id='input-name'
               type='text'
@@ -169,7 +169,9 @@ const SignUpForm = () => {
           <Button type='primary' htmlType='submit'>
             Create Account
           </Button>
-          <p className='form-titles-centered'>Then you can publish your first offer!</p>
+          <p className='form-titles-centered'>
+            Then you can publish your first offer!
+          </p>
         </form>
       </div>
     </>
